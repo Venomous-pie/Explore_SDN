@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import Carousel from '@/components/Carousel.vue';
+import Highlight from '@/components/Highlight.vue';
 </script>
 
 <template>
-  <div class="h-full overflow-y-auto">
-  <Carousel />
-    <div>
-      contents
-      <h1>Contents</h1>
-    </div>
+  <div class="h-full">
+    <Carousel />
+    <Highlight />
   </div>
 </template>

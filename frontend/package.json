@@ -16,8 +16,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/aos": "^3.0.7",
     "@vueuse/components": "^14.0.0",
     "@vueuse/core": "^14.0.0",
+    "aos": "^2.3.4",
     "axios": "^1.13.1",
     "motion-v": "^1.7.4",
     "pinia": "^3.0.3",
