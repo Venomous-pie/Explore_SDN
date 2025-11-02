@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "Mama's Grill",
+    "cuisine": "Filipino BBQ (Inihaw)",
+    "category": "Local Filipino",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8050,
+    "longitude": 126.1550,
+    "rating": 4.7,
+    "totalRatings": 850,
+    "description": "Highly popular and affordable local spot for grilled meat and seafood. Famous for authentic Filipino inihaw (BBQ) cooked over charcoal. A must-visit for budget-conscious travelers seeking authentic local flavors.",
+    "priceLevel": 1,
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800",
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=800"
+    ],
+    "specialty": ["Grilled pork belly", "BBQ chicken", "Grilled seafood", "Local vegetables"],
+    "priceRange": "₱100-300 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": ["Budget-friendly", "Local favorite", "BBQ", "Casual dining"]
+  },
+  {
+    "id": 2,
+    "name": "CEV: Ceviche & Kinilaw Shack",
+    "cuisine": "Filipino Kinilaw & Peruvian Ceviche",
+    "category": "Seafood",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8060,
+    "longitude": 126.1560,
+    "rating": 4.8,
+    "totalRatings": 620,
+    "description": "Fresh, raw seafood dishes marinated in vinegar and citrus. Specializes in Filipino kinilaw and Peruvian-style ceviche. Perfect for seafood lovers seeking fresh, healthy, and flavorful options.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800",
+      "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800"
+    ],
+    "specialty": ["Classic ceviche", "Kinilaw na tanigue", "Mixed seafood ceviche", "Fresh tuna"],
+    "priceRange": "₱250-500 per person",
+    "openHours": "12:00 PM - 9:00 PM",
+    "tags": ["Seafood", "Healthy", "Fresh", "Fusion"]
+  },
+  {
+    "id": 3,
+    "name": "SHAKA",
+    "cuisine": "Smoothie Bowls & Healthy Cafe",
+    "category": "Cafe",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8070,
+    "longitude": 126.1570,
+    "rating": 4.9,
+    "totalRatings": 1240,
+    "description": "Most famous for its colorful, fruit-based smoothie bowls. Perfect for breakfast and snacks. Offers vegan and vegetarian options. Instagram-worthy presentations with fresh tropical fruits and superfood toppings.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=800",
+      "https://images.unsplash.com/photo-1511688878353-3a2f5be94cd7?w=800"
+    ],
+    "specialty": ["Acai bowl", "Dragon fruit bowl", "Mango smoothie bowl", "Granola toppings"],
+    "priceRange": "₱200-400 per bowl",
+    "openHours": "7:00 AM - 5:00 PM",
+    "tags": ["Healthy", "Vegan-friendly", "Breakfast", "Instagram-worthy"]
+  },
+  {
+    "id": 4,
+    "name": "Bravo Restaurant",
+    "cuisine": "Spanish Tapas & Asian Fusion",
+    "category": "Fine Dining",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8080,
+    "longitude": 126.1580,
+    "rating": 4.6,
+    "totalRatings": 780,
+    "description": "Located at Bravo Beach Resort with great beachfront dining. Known for its nightlife and excellent cocktails. Offers a sophisticated atmosphere with a mix of Spanish tapas and Asian cuisine.",
+    "priceLevel": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+    ],
+    "specialty": ["Spanish tapas platter", "Paella", "Asian fusion dishes", "Craft cocktails"],
+    "priceRange": "₱500-1000 per person",
+    "openHours": "11:00 AM - 11:00 PM",
+    "tags": ["Beachfront", "Fine dining", "Nightlife", "Cocktails"]
+  },
+  {
+    "id": 5,
+    "name": "Harana Surf Restaurant",
+    "cuisine": "Filipino Fusion",
+    "category": "Filipino Fusion",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8090,
+    "longitude": 126.1590,
+    "rating": 4.7,
+    "totalRatings": 690,
+    "description": "Offers local specialties with a modern twist. Famous for their Harana Halo-Halo dessert. Combines traditional Filipino flavors with contemporary presentation. Great atmosphere and friendly service.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800"
+    ],
+    "specialty": ["Harana Halo-Halo", "Sisig pizza", "Filipino breakfast", "Fusion dishes"],
+    "priceRange": "₱300-600 per person",
+    "openHours": "7:00 AM - 10:00 PM",
+    "tags": ["Filipino fusion", "Local favorite", "Desserts", "Casual"]
+  },
+  {
+    "id": 6,
+    "name": "Warung Siargao",
+    "cuisine": "Indonesian & Southeast Asian",
+    "category": "Asian",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8100,
+    "longitude": 126.1600,
+    "rating": 4.8,
+    "totalRatings": 540,
+    "description": "Authentic Indonesian and Southeast Asian cuisine. Must-try dishes include Nasi Bugkus and Laksa. Brings the flavors of Indonesia to Siargao with traditional recipes and fresh ingredients.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800",
+      "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800"
+    ],
+    "specialty": ["Nasi Bugkus", "Laksa", "Indonesian satay", "Rendang"],
+    "priceRange": "₱250-500 per person",
+    "openHours": "11:00 AM - 9:00 PM",
+    "tags": ["Indonesian", "Authentic", "Spicy", "Asian cuisine"]
+  },
+  {
+    "id": 7,
+    "name": "The Smoking Joint BBQ",
+    "cuisine": "American BBQ",
+    "category": "American",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8110,
+    "longitude": 126.1610,
+    "rating": 4.7,
+    "totalRatings": 470,
+    "description": "Known for its smoked meats, particularly brisket and ribs. Authentic American BBQ technique with slow-smoked meats. Perfect for those craving Western-style comfort food.",
+    "priceLevel": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=800",
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=800"
+    ],
+    "specialty": ["Smoked brisket", "BBQ ribs", "Pulled pork", "Mac and cheese"],
+    "priceRange": "₱400-800 per person",
+    "openHours": "12:00 PM - 10:00 PM",
+    "tags": ["American BBQ", "Smoked meats", "Western food", "Premium"]
+  },
+  {
+    "id": 8,
+    "name": "White Banana Beach Club",
+    "cuisine": "Pescatarian & Vegan-Friendly",
+    "category": "Beach Club",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.8120,
+    "longitude": 126.1620,
+    "rating": 4.6,
+    "totalRatings": 620,
+    "description": "A cool beachfront bar with a focus on fresh, sustainable ingredients. Offers pescatarian and vegan-friendly options. Perfect spot for sunset drinks and healthy meals by the beach.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
+      "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800"
+    ],
+    "specialty": ["Fresh fish tacos", "Vegan buddha bowl", "Sustainable seafood", "Tropical cocktails"],
+    "priceRange": "₱300-600 per person",
+    "openHours": "10:00 AM - 11:00 PM",
+    "tags": ["Beachfront", "Vegan-friendly", "Sustainable", "Bar"]
+  }
+]
