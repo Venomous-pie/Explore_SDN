@@ -83,7 +83,7 @@ const handleWheel = (e: WheelEvent) => {
 </script>
 
 <template>
-    <div class="h-screen overflow-hidden z-0">
+    <div class="h-screen z-0">
         <!-- Loading State -->
         <div v-if="loading" class="flex h-full w-full items-center justify-center bg-gray-900">
             <div class="text-center">
@@ -105,7 +105,7 @@ const handleWheel = (e: WheelEvent) => {
             <!-- Background Image with Overlay -->
             <div class="absolute inset-0 transition-all duration-700">
                 <!-- Low-res blur-up background -->
-                <div class="absolute inset-0 bg-cover bg-center blur-lg scale-105"
+                <div class="absolute inset-0 bg-cover bg-center blur-lg scale-100"
                     :style="{ backgroundImage: currentPlace.images[0] ? `url(${currentPlace.images[0]}?w=50)` : '' }" />
 
                 <!-- Main background with fade-in -->

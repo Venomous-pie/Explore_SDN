@@ -8,7 +8,7 @@
 
         <div class="flex items-center gap-2 flex-shrink-0" :class="{ 'opacity-0': expanded }">
             <div class="i-mdi-bag-personal text-md"></div>
-            <span class="text-md font-diner">Explore - SND</span>
+            <span class="text-md font-diner">Explore - SDN</span>
         </div>
 
         <ul class="flex items-center gap-4 list-none flex-shrink-0 text-sm font-serif"
