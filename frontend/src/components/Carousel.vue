@@ -1,45 +1,37 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { Motion } from 'motion-v'
-import { fetchPlaces, type Place } from '@/services/api'
-import { preloadImages } from '@/services/imagePreloader'
+import { useDataStore } from '@/stores/dataStore'
+import { useImages } from '@/composables/useImages'
 
-const places = ref<Place[]>([])
+const dataStore = useDataStore()
+const { loadImage } = useImages()
+
 const currentIndex = ref(0)
-const loading = ref(true)
-const error = ref('')
 const imageLoaded = ref(false)
 const highlightsRef = ref<HTMLElement | null>(null)
 let autoplayInterval: number | null = null
 
-const currentPlace = computed(() => places.value[currentIndex.value])
+const currentPlace = computed(() => dataStore.places[currentIndex.value])
 
 watch(() => currentPlace.value?.images[0], (newSrc) => {
     if (!newSrc) return
     imageLoaded.value = false
-    const img = new Image()
-    img.onload = () => {
-        imageLoaded.value = true
-    }
-    img.src = newSrc
+    loadImage(newSrc)
+        .then(() => {
+            imageLoaded.value = true
+        })
+        .catch(() => {
+            imageLoaded.value = true // Show anyway
+        })
 }, { immediate: true })
 
 onMounted(async () => {
-    try {
-        places.value = await fetchPlaces()
-        loading.value = false
-
-        const allImgs = places.value.flatMap(p => p.images || [])
-        preloadImages(allImgs, (loaded, total) => {
-            // Update loading progress if needed
-        }).catch(() => {
-            // Ignore 
-        })
-
+    // Fetch data from centralized store
+    await dataStore.fetchAllData()
+    
+    if (dataStore.places.length > 0) {
         startAutoplay()
-    } catch (err) {
-        error.value = err instanceof Error ? err.message : 'Failed to load places'
-        loading.value = false
     }
 })
 
@@ -61,7 +53,7 @@ const stopAutoplay = () => {
 }
 
 const nextSlide = () => {
-    currentIndex.value = (currentIndex.value + 1) % places.value.length
+    currentIndex.value = (currentIndex.value + 1) % dataStore.places.length
 }
 
 const goToSlide = (index: number) => {
@@ -85,7 +77,7 @@ const handleWheel = (e: WheelEvent) => {
 <template>
     <div class="h-screen z-0">
         <!-- Loading State -->
-        <div v-if="loading" class="flex h-full w-full items-center justify-center bg-gray-900">
+        <div v-if="dataStore.loading" class="flex h-full w-full items-center justify-center bg-gray-900">
             <div class="text-center">
                 <div class="i-carbon-circle-dash animate-spin text-6xl text-white mb-4" />
                 <p class="text-white text-xl">Loading amazing places...</p>
@@ -93,10 +85,10 @@ const handleWheel = (e: WheelEvent) => {
         </div>
 
         <!-- Error State -->
-        <div v-else-if="error" class="flex h-full w-full items-center justify-center bg-gray-900">
+        <div v-else-if="dataStore.error" class="flex h-full w-full items-center justify-center bg-gray-900">
             <div class="text-center text-red-400">
                 <div class="i-carbon-warning text-6xl mb-4" />
-                <p class="text-xl">{{ error }}</p>
+                <p class="text-xl">{{ dataStore.error }}</p>
             </div>
         </div>
 
@@ -211,7 +203,7 @@ const handleWheel = (e: WheelEvent) => {
                 :transition="{ duration: 0.5, delay: 0.9 }">
                 <div
                     class="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
-                    <Motion v-for="(place, index) in places" :key="place.id" :whileHover="{ scale: 1.2 }"
+                    <Motion v-for="(place, index) in dataStore.places" :key="place.id" :whileHover="{ scale: 1.2 }"
                         :whileTap="{ scale: 0.9 }">
                         <div @click="goToSlide(index)" class="transition-all duration-300" :class="[
                             index === currentIndex

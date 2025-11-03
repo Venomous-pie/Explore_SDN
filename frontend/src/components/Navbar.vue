@@ -128,10 +128,12 @@
 import { ref, computed, watch, nextTick } from 'vue';
 import { vOnClickOutside } from '@vueuse/components';
 import { useRouter } from 'vue-router';
-import { searchPlaces, type Place } from '@/services/api';
+import { useDataStore } from '@/stores/dataStore';
+import type { Place } from '@/services/api';
 import { useDebounceFn } from '@vueuse/core';
 
 const router = useRouter();
+const dataStore = useDataStore();
 const expanded = ref(false);
 const searchQuery = ref('');
 const debouncedQuery = ref('');
@@ -145,7 +147,7 @@ const showResults = computed(() =>
     expanded.value && (isLoading.value || results.value.length > 0 || debouncedQuery.value)
 );
 
-// Debounced search function to avoid too many API calls
+// Debounced search function using centralized store
 const debouncedSearch = useDebounceFn(async (query: string) => {
     if (!query.trim()) {
         results.value = [];
@@ -157,7 +159,8 @@ const debouncedSearch = useDebounceFn(async (query: string) => {
         isLoading.value = true;
         error.value = '';
         debouncedQuery.value = query;
-        results.value = await searchPlaces(query);
+        // Use centralized store search
+        results.value = dataStore.searchPlaces(query);
     } catch (err) {
         error.value = err instanceof Error ? err.message : 'Failed to search places';
         results.value = [];

@@ -6,20 +6,37 @@
     "type": "All-Inclusive Resort",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8150,
-    "longitude": 126.1650,
+    "latitude": 9.815,
+    "longitude": 126.165,
     "rating": 4.9,
     "totalRatings": 320,
     "description": "Exclusive, top-tier luxury resort with private villas. All-inclusive experience with world-class amenities. Perfect for honeymooners and luxury travelers seeking privacy and exceptional service. Features private beaches and personalized experiences.",
     "priceLevel": 5,
     "images": [
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800",
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800"
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"
     ],
-    "amenities": ["Private villas", "All-inclusive dining", "Spa services", "Private beach", "Infinity pool", "Water sports"],
+    "amenities": [
+      "Private villas",
+      "All-inclusive dining",
+      "Spa services",
+      "Private beach",
+      "Infinity pool",
+      "Water sports"
+    ],
     "priceRange": "₱25,000-50,000+ per night",
-    "highlights": ["Ultra-luxury", "All-inclusive", "Private villas", "Exclusive"],
-    "tags": ["Luxury", "Honeymoon", "All-inclusive", "Private"]
+    "highlights": [
+      "Ultra-luxury",
+      "All-inclusive",
+      "Private villas",
+      "Exclusive"
+    ],
+    "tags": [
+      "Luxury",
+      "Honeymoon",
+      "All-inclusive",
+      "Private"
+    ]
   },
   {
     "id": 2,
@@ -28,20 +45,37 @@
     "type": "Boutique Resort",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8140,
-    "longitude": 126.1640,
+    "latitude": 9.814,
+    "longitude": 126.164,
     "rating": 4.8,
     "totalRatings": 450,
     "description": "Redefining island luxury with modern design and excellent location. Features a large swimming pool and beautifully designed accommodations. Perfect blend of luxury and island vibe.",
     "priceLevel": 4,
     "images": [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800"
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80"
     ],
-    "amenities": ["Large pool", "Restaurant", "Beach access", "Modern rooms", "WiFi", "Garden"],
+    "amenities": [
+      "Large pool",
+      "Restaurant",
+      "Beach access",
+      "Modern rooms",
+      "WiFi",
+      "Garden"
+    ],
     "priceRange": "₱8,000-15,000 per night",
-    "highlights": ["Boutique luxury", "Large pool", "Great location", "Modern design"],
-    "tags": ["Luxury", "Boutique", "Pool", "Modern"]
+    "highlights": [
+      "Boutique luxury",
+      "Large pool",
+      "Great location",
+      "Modern design"
+    ],
+    "tags": [
+      "Luxury",
+      "Boutique",
+      "Pool",
+      "Modern"
+    ]
   },
   {
     "id": 3,
@@ -50,20 +84,37 @@
     "type": "Resort & Spa",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8130,
-    "longitude": 126.1630,
+    "latitude": 9.813,
+    "longitude": 126.163,
     "rating": 4.7,
     "totalRatings": 580,
     "description": "Luxurious resort with large pool complex and full-service spa. Often caters to families with spacious accommodations. Features beautiful gardens and multiple dining options.",
     "priceLevel": 4,
     "images": [
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=80",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80"
     ],
-    "amenities": ["Pool complex", "Spa & wellness", "Restaurant", "Family rooms", "Kids pool", "Gardens"],
+    "amenities": [
+      "Pool complex",
+      "Spa & wellness",
+      "Restaurant",
+      "Family rooms",
+      "Kids pool",
+      "Gardens"
+    ],
     "priceRange": "₱7,000-12,000 per night",
-    "highlights": ["Family-friendly", "Spa services", "Large pool", "Gardens"],
-    "tags": ["Luxury", "Family-friendly", "Spa", "Pool"]
+    "highlights": [
+      "Family-friendly",
+      "Spa services",
+      "Large pool",
+      "Gardens"
+    ],
+    "tags": [
+      "Luxury",
+      "Family-friendly",
+      "Spa",
+      "Pool"
+    ]
   },
   {
     "id": 4,
@@ -72,20 +123,37 @@
     "type": "Beach Resort",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8080,
-    "longitude": 126.1580,
+    "latitude": 9.808,
+    "longitude": 126.158,
     "rating": 4.6,
     "totalRatings": 890,
     "description": "Lively atmosphere located directly on the beach with popular restaurant. Great social vibe perfect for couples and groups. Features beachfront access and excellent dining options.",
     "priceLevel": 3,
     "images": [
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800"
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80"
     ],
-    "amenities": ["Beachfront", "Restaurant & bar", "WiFi", "Pool", "Tour desk", "Airport transfer"],
+    "amenities": [
+      "Beachfront",
+      "Restaurant & bar",
+      "WiFi",
+      "Pool",
+      "Tour desk",
+      "Airport transfer"
+    ],
     "priceRange": "₱3,500-6,000 per night",
-    "highlights": ["Beachfront location", "Lively atmosphere", "Great restaurant", "Social vibe"],
-    "tags": ["Mid-range", "Beachfront", "Social", "Restaurant"]
+    "highlights": [
+      "Beachfront location",
+      "Lively atmosphere",
+      "Great restaurant",
+      "Social vibe"
+    ],
+    "tags": [
+      "Mid-range",
+      "Beachfront",
+      "Social",
+      "Restaurant"
+    ]
   },
   {
     "id": 5,
@@ -94,20 +162,37 @@
     "type": "Boutique Resort",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8090,
-    "longitude": 126.1590,
+    "latitude": 9.809,
+    "longitude": 126.159,
     "rating": 4.7,
     "totalRatings": 620,
     "description": "Tranquil retreat with spacious villas and infinity pool. 'Kalinaw' means 'peace' in Visayan. Perfect for couples seeking relaxation in a serene environment. Beautiful garden setting.",
     "priceLevel": 3,
     "images": [
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800"
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
     ],
-    "amenities": ["Infinity pool", "Spacious villas", "Garden", "WiFi", "Breakfast", "Tour desk"],
+    "amenities": [
+      "Infinity pool",
+      "Spacious villas",
+      "Garden",
+      "WiFi",
+      "Breakfast",
+      "Tour desk"
+    ],
     "priceRange": "₱4,000-7,000 per night",
-    "highlights": ["Tranquil", "Infinity pool", "Spacious villas", "Peaceful"],
-    "tags": ["Mid-range", "Peaceful", "Pool", "Couples"]
+    "highlights": [
+      "Tranquil",
+      "Infinity pool",
+      "Spacious villas",
+      "Peaceful"
+    ],
+    "tags": [
+      "Mid-range",
+      "Peaceful",
+      "Pool",
+      "Couples"
+    ]
   },
   {
     "id": 6,
@@ -116,20 +201,37 @@
     "type": "Surf Resort",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8070,
-    "longitude": 126.1570,
+    "latitude": 9.807,
+    "longitude": 126.157,
     "rating": 4.6,
     "totalRatings": 750,
     "description": "Laid-back vibe with popular restaurant and surf lessons available. Perfect for surfers and active travelers. Friendly staff and great community atmosphere. Close to major surf spots.",
     "priceLevel": 3,
     "images": [
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800",
-      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800"
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
     ],
-    "amenities": ["Surf lessons", "Restaurant", "Pool", "WiFi", "Bike rental", "Tour services"],
+    "amenities": [
+      "Surf lessons",
+      "Restaurant",
+      "Pool",
+      "WiFi",
+      "Bike rental",
+      "Tour services"
+    ],
     "priceRange": "₱3,000-5,500 per night",
-    "highlights": ["Surf-friendly", "Great restaurant", "Laid-back vibe", "Community"],
-    "tags": ["Mid-range", "Surfing", "Social", "Active"]
+    "highlights": [
+      "Surf-friendly",
+      "Great restaurant",
+      "Laid-back vibe",
+      "Community"
+    ],
+    "tags": [
+      "Mid-range",
+      "Surfing",
+      "Social",
+      "Active"
+    ]
   },
   {
     "id": 7,
@@ -138,20 +240,37 @@
     "type": "Guesthouse",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8050,
-    "longitude": 126.1550,
+    "latitude": 9.805,
+    "longitude": 126.155,
     "rating": 4.5,
     "totalRatings": 420,
     "description": "Nice spacious rooms close to General Luna Beach. Great value for money with clean, comfortable accommodations. Friendly owners provide local tips and assistance. Perfect for budget-conscious travelers.",
     "priceLevel": 1,
     "images": [
-      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800",
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800"
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80"
     ],
-    "amenities": ["Spacious rooms", "WiFi", "Fan/AC options", "Close to beach", "Kitchen access", "Friendly hosts"],
+    "amenities": [
+      "Spacious rooms",
+      "WiFi",
+      "Fan/AC options",
+      "Close to beach",
+      "Kitchen access",
+      "Friendly hosts"
+    ],
     "priceRange": "₱800-1,500 per night",
-    "highlights": ["Budget-friendly", "Spacious", "Near beach", "Local experience"],
-    "tags": ["Budget", "Guesthouse", "Local", "Value"]
+    "highlights": [
+      "Budget-friendly",
+      "Spacious",
+      "Near beach",
+      "Local experience"
+    ],
+    "tags": [
+      "Budget",
+      "Guesthouse",
+      "Local",
+      "Value"
+    ]
   },
   {
     "id": 8,
@@ -160,20 +279,37 @@
     "type": "Homestay",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8040,
-    "longitude": 126.1540,
+    "latitude": 9.804,
+    "longitude": 126.154,
     "rating": 4.6,
     "totalRatings": 380,
     "description": "Cozy and highly-rated homestay experience with garden setting. Family-run accommodation providing authentic local hospitality. Clean, comfortable rooms in a peaceful environment.",
     "priceLevel": 1,
     "images": [
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800",
-      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800"
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80",
+      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80"
     ],
-    "amenities": ["Garden view", "WiFi", "Breakfast available", "Bike rental", "Local tours", "Kitchen"],
+    "amenities": [
+      "Garden view",
+      "WiFi",
+      "Breakfast available",
+      "Bike rental",
+      "Local tours",
+      "Kitchen"
+    ],
     "priceRange": "₱700-1,200 per night",
-    "highlights": ["Cozy", "Garden setting", "Family-run", "Authentic"],
-    "tags": ["Budget", "Homestay", "Garden", "Family-run"]
+    "highlights": [
+      "Cozy",
+      "Garden setting",
+      "Family-run",
+      "Authentic"
+    ],
+    "tags": [
+      "Budget",
+      "Homestay",
+      "Garden",
+      "Family-run"
+    ]
   },
   {
     "id": 9,
@@ -182,19 +318,382 @@
     "type": "Hostel",
     "municipality": "General Luna",
     "island": "Siargao",
-    "latitude": 9.8030,
-    "longitude": 126.1530,
+    "latitude": 9.803,
+    "longitude": 126.153,
     "rating": 4.4,
     "totalRatings": 560,
     "description": "Great option for solo travelers and backpackers looking for a social atmosphere. Features both dorm beds and private rooms. Common areas perfect for meeting fellow travelers. Regular social events and surf trips.",
     "priceLevel": 1,
     "images": [
-      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800",
-      "https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=800"
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=800&q=80"
     ],
-    "amenities": ["Dorm beds", "Private rooms", "Common area", "WiFi", "Social events", "Surf board storage"],
+    "amenities": [
+      "Dorm beds",
+      "Private rooms",
+      "Common area",
+      "WiFi",
+      "Social events",
+      "Surf board storage"
+    ],
     "priceRange": "₱400-1,000 per night",
-    "highlights": ["Backpacker-friendly", "Social atmosphere", "Dorms available", "Budget"],
-    "tags": ["Budget", "Hostel", "Backpackers", "Social"]
+    "highlights": [
+      "Backpacker-friendly",
+      "Social atmosphere",
+      "Dorms available",
+      "Budget"
+    ],
+    "tags": [
+      "Budget",
+      "Hostel",
+      "Backpackers",
+      "Social"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "The Henry Resort at Kermit Siargao",
+    "category": "Mid-Range/Resort",
+    "type": "Beach Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.816,
+    "longitude": 126.166,
+    "rating": 4.5,
+    "totalRatings": 987,
+    "description": "Popular resort featuring the famous Kermit Restaurant on-site. Known for wood-fired pizzas and Italian cuisine. Great location with easy access to beaches and attractions. Family-friendly atmosphere.",
+    "priceLevel": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
+    ],
+    "amenities": [
+      "Restaurant on-site",
+      "Pool",
+      "WiFi",
+      "Beach access",
+      "Tour desk",
+      "Family rooms"
+    ],
+    "priceRange": "₱3,500-6,500 per night",
+    "highlights": [
+      "Famous restaurant",
+      "Italian cuisine",
+      "Family-friendly",
+      "Great location"
+    ],
+    "tags": [
+      "Mid-range",
+      "Restaurant",
+      "Family",
+      "Italian food"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Retreat Siargao Resort",
+    "category": "Mid-Range/Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.817,
+    "longitude": 126.167,
+    "rating": 4.6,
+    "totalRatings": 745,
+    "description": "Peaceful resort offering a relaxing atmosphere away from the crowds. Modern amenities with traditional Filipino hospitality. Close to Magpupungko and other northern attractions.",
+    "priceLevel": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"
+    ],
+    "amenities": [
+      "Pool",
+      "Restaurant",
+      "WiFi",
+      "Tour services",
+      "Spa",
+      "Garden"
+    ],
+    "priceRange": "₱4,000-7,500 per night",
+    "highlights": [
+      "Peaceful",
+      "Modern",
+      "Near attractions",
+      "Relaxing"
+    ],
+    "tags": [
+      "Mid-range",
+      "Peaceful",
+      "Modern",
+      "Spa"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Club Tara Resort",
+    "category": "Mid-Range/Resort",
+    "type": "Resort",
+    "municipality": "Socorro",
+    "island": "Bucas Grande",
+    "latitude": 9.62,
+    "longitude": 126.095,
+    "rating": 4.2,
+    "totalRatings": 380,
+    "description": "Gateway to Sohoton Cove National Park. Perfect base for exploring Bucas Grande Islands. Offers restaurant and tour packages to nearby attractions including jellyfish sanctuary and caves.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
+    ],
+    "amenities": [
+      "Restaurant",
+      "Tour packages",
+      "WiFi",
+      "Boat services",
+      "Local guides"
+    ],
+    "priceRange": "₱2,500-5,000 per night",
+    "highlights": [
+      "Sohoton access",
+      "Island tours",
+      "Local experience",
+      "Adventure base"
+    ],
+    "tags": [
+      "Mid-range",
+      "Adventure",
+      "Island tours",
+      "Sohoton"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Siargao Island Villas",
+    "category": "Luxury/Boutique",
+    "type": "Villa Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.818,
+    "longitude": 126.168,
+    "rating": 4.8,
+    "totalRatings": 620,
+    "description": "Upscale villa accommodations with modern amenities. Perfect for island hopping tours. Features spacious villas with private pools and stunning ocean views.",
+    "priceLevel": 4,
+    "images": [
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+    ],
+    "amenities": [
+      "Private pools",
+      "Ocean views",
+      "WiFi",
+      "Tour desk",
+      "Restaurant",
+      "Spa"
+    ],
+    "priceRange": "₱8,000-15,000 per night",
+    "highlights": [
+      "Luxury villas",
+      "Private pools",
+      "Ocean views",
+      "Premium"
+    ],
+    "tags": [
+      "Luxury",
+      "Villas",
+      "Premium",
+      "Ocean view"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Hotel Tavern Surigao",
+    "category": "Mid-Range/Resort",
+    "type": "Hotel",
+    "municipality": "Surigao City",
+    "island": "Mindanao",
+    "latitude": 9.7833,
+    "longitude": 125.4833,
+    "rating": 4.3,
+    "totalRatings": 450,
+    "description": "Comfortable hotel in Surigao City. Convenient base for mainland attractions and ferry connections to Siargao. Modern amenities with local hospitality.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
+    ],
+    "amenities": [
+      "Restaurant",
+      "WiFi",
+      "Air conditioning",
+      "Tour desk",
+      "Airport transfer"
+    ],
+    "priceRange": "₱2,000-4,000 per night",
+    "highlights": [
+      "City location",
+      "Ferry access",
+      "Comfortable",
+      "Convenient"
+    ],
+    "tags": [
+      "Mid-range",
+      "City",
+      "Transit",
+      "Mainland"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Fiesta Resort",
+    "category": "Mid-Range/Resort",
+    "type": "Beach Resort",
+    "municipality": "Surigao City",
+    "island": "Mindanao",
+    "latitude": 9.79,
+    "longitude": 125.49,
+    "rating": 4.0,
+    "totalRatings": 320,
+    "description": "Beachfront resort near Mabua Pebble Beach. Features restaurant and easy beach access. Great for sunset viewing and mainland exploration.",
+    "priceLevel": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80"
+    ],
+    "amenities": [
+      "Beachfront",
+      "Restaurant",
+      "WiFi",
+      "Pool",
+      "Beach access"
+    ],
+    "priceRange": "₱2,500-4,500 per night",
+    "highlights": [
+      "Beachfront",
+      "Sunset views",
+      "Restaurant",
+      "Pebble beach"
+    ],
+    "tags": [
+      "Mid-range",
+      "Beach",
+      "Sunset",
+      "Mainland"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "DaRosa Del Mar Resort",
+    "category": "Mid-Range/Resort",
+    "type": "Beach Resort",
+    "municipality": "Santa Monica",
+    "island": "Siargao",
+    "latitude": 9.9,
+    "longitude": 126.2,
+    "rating": 4.7,
+    "totalRatings": 280,
+    "description": "Beachfront resort near Alegria Beach. Peaceful location away from tourist crowds. Perfect for those seeking tranquility and pristine beaches.",
+    "priceLevel": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
+    ],
+    "amenities": [
+      "Beachfront",
+      "Restaurant",
+      "WiFi",
+      "Pool",
+      "Peaceful setting"
+    ],
+    "priceRange": "₱3,500-6,000 per night",
+    "highlights": [
+      "Alegria Beach",
+      "Peaceful",
+      "Pristine beach",
+      "Away from crowds"
+    ],
+    "tags": [
+      "Mid-range",
+      "Beach",
+      "Peaceful",
+      "Secluded"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Buddha's Surf Resort",
+    "category": "Mid-Range/Resort",
+    "type": "Surf Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.85,
+    "longitude": 126.2,
+    "rating": 4.6,
+    "totalRatings": 410,
+    "description": "Surf-focused resort at Pacifico Beach. Great for surfers and beach lovers. Laid-back atmosphere with beachfront access and surf lessons available.",
+    "priceLevel": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80"
+    ],
+    "amenities": [
+      "Beachfront",
+      "Surf lessons",
+      "Restaurant",
+      "WiFi",
+      "Board storage"
+    ],
+    "priceRange": "₱3,000-5,500 per night",
+    "highlights": [
+      "Pacifico Beach",
+      "Surfing",
+      "Laid-back",
+      "Beachfront"
+    ],
+    "tags": [
+      "Mid-range",
+      "Surfing",
+      "Beach",
+      "Pacifico"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Mad Monkey Hostel Siargao",
+    "category": "Budget/Homestay",
+    "type": "Hostel",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.804,
+    "longitude": 126.154,
+    "rating": 4.5,
+    "totalRatings": 890,
+    "description": "Popular backpacker hostel with vibrant social atmosphere. Features pool, bar, and regular events. Great for meeting fellow travelers and budget-conscious adventurers.",
+    "priceLevel": 1,
+    "images": [
+      "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=800&q=80"
+    ],
+    "amenities": [
+      "Dorm beds",
+      "Pool",
+      "Bar",
+      "WiFi",
+      "Social events",
+      "Tour desk"
+    ],
+    "priceRange": "₱500-1,200 per night",
+    "highlights": [
+      "Backpacker hub",
+      "Social",
+      "Pool",
+      "Budget-friendly"
+    ],
+    "tags": [
+      "Budget",
+      "Hostel",
+      "Social",
+      "Backpackers"
+    ]
   }
 ]

@@ -21,6 +21,8 @@
     "@vueuse/core": "^14.0.0",
     "aos": "^2.3.4",
     "axios": "^1.13.1",
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2",
     "motion-v": "^1.7.4",
     "pinia": "^3.0.3",
     "unocss": "^66.5.4",
@@ -30,6 +32,8 @@
   "devDependencies": {
     "@iconify/json": "^2.2.402",
     "@tsconfig/node22": "^22.0.2",
+    "@types/imagesloaded": "^4.1.7",
+    "@types/masonry-layout": "^4.2.8",
     "@types/node": "^22.18.11",
     "@unocss/preset-icons": "^66.5.4",
     "@unocss/preset-web-fonts": "^66.5.4",
