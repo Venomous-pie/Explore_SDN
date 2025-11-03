@@ -83,7 +83,7 @@ const handleWheel = (e: WheelEvent) => {
 </script>
 
 <template>
-    <div class="fixed inset-0 overflow-hidden z-0">
+    <div class="h-screen overflow-hidden z-0">
         <!-- Loading State -->
         <div v-if="loading" class="flex h-full w-full items-center justify-center bg-gray-900">
             <div class="text-center">
@@ -143,7 +143,7 @@ const handleWheel = (e: WheelEvent) => {
                             <div class="i-carbon-location text-lg sm:text-xl" />
                             <span class="text-sm sm:text-base md:text-lg">{{ currentPlace.municipality }}, {{
                                 currentPlace.island
-                                }}</span>
+                            }}</span>
                         </div>
                     </Motion>
 
@@ -184,7 +184,7 @@ const handleWheel = (e: WheelEvent) => {
                                                 <div class="i-carbon-star-filled text-xs" />
                                                 <span class="text-xs text-white">{{ currentPlace.rating }}</span>
                                                 <span class="text-white/70 text-[0.6rem]">({{ currentPlace.totalRatings
-                                                    }})</span>
+                                                }})</span>
                                             </div>
                                         </Motion>
                                     </div>

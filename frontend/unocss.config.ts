@@ -8,7 +8,7 @@ export default defineConfig({
       fonts: {
         sans: 'Montserrat',
         mono: 'Arizonia', 
-        serif: 'Roboto',
+        serif: 'Noto Serif',
         diner: 'Permanent Marker',
       },
     }),
