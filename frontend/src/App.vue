@@ -2,6 +2,7 @@
 import Navbar from './components/Navbar.vue'
 import { onMounted } from 'vue'
 import { useDataStore } from '@/stores/dataStore'
+import Footer from './components/Footer.vue'
 
 const dataStore = useDataStore()
 
@@ -20,5 +21,8 @@ onMounted(async () => {
     <main>
       <router-view />
     </main>
+    <footer>
+      <Footer />
+    </footer>
   </div>
 </template>

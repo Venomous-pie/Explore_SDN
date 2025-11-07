@@ -3,6 +3,7 @@ import Carousel from '@/components/Carousel.vue';
 import Experience from '@/components/Experience.vue';
 import Highlight from '@/components/Highlight.vue';
 import Location from '@/components/Location.vue';
+import SDN from '@/components/SDN.vue';
 </script>
 
 <template>
@@ -14,6 +15,9 @@ import Location from '@/components/Location.vue';
     </div>
     <div class="flex px-16">
       <Location />
+    </div>
+    <div class="flex justify-center mt-16">
+      <SDN />
     </div>
   </div>
 </template>

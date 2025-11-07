@@ -1,17 +1,17 @@
 <template>
-    <div class="w-full py-12 px-6">
+    <div class="w-full py-6 px-6 max-h-screen overflow-hidden">
         <!-- Header -->
-        <div class="flex justify-between items-center mb-8">
+        <div class="flex justify-between items-center mb-4" data-aos="fade-down" data-aos-duration="800">
           <h2 class="text-6xl font-serif">Pick your place</h2>
-          <span class="text-lg text-gray-600">Explore Surigao del Norte</span>
+          <span class="text-sm text-gray-600">Explore Surigao del Norte</span>
         </div>
 
         <!-- Main Content -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <!-- Left Side: Image Carousel, Description, CTAs -->
-          <div class="lg:col-span-2 space-y-6">
+          <div class="lg:col-span-2 space-y-3" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
             <!-- Image Carousel -->
-            <div class="relative w-full h-[500px] bg-gray-200 rounded-2xl overflow-hidden group">
+            <div class="relative w-full h-[320px] bg-gray-200 rounded-xl overflow-hidden group">
               <div v-if="currentPlace && currentImages.length > 0" class="relative w-full h-full">
                 <!-- Main Image -->
                 <img
@@ -65,48 +65,48 @@
             </div>
 
             <!-- Place Information -->
-            <div v-if="currentPlace" class="space-y-4">
+            <div v-if="currentPlace" class="space-y-2">
               <!-- Place Name and Rating -->
               <div class="flex items-start justify-between">
                 <div>
-                  <h3 class="text-3xl font-bold text-gray-900">{{ currentPlace.name }}</h3>
-                  <p class="text-lg text-gray-600 mt-1">{{ currentPlace.municipality }}</p>
+                  <h3 class="text-xl font-bold text-gray-900">{{ currentPlace.name }}</h3>
+                  <p class="text-sm text-gray-600 mt-0.5">{{ currentPlace.municipality }}</p>
                 </div>
-                <div class="flex items-center gap-2 bg-yellow-50 px-4 py-2 rounded-full">
-                  <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                <div class="flex items-center gap-1 bg-yellow-50 px-3 py-1 rounded-full">
+                  <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
-                  <span class="font-semibold text-gray-900">{{ currentPlace.rating }}</span>
-                  <span class="text-sm text-gray-600">({{ currentPlace.totalRatings }})</span>
+                  <span class="font-semibold text-gray-900 text-sm">{{ currentPlace.rating }}</span>
+                  <span class="text-xs text-gray-600">({{ currentPlace.totalRatings }})</span>
                 </div>
               </div>
 
               <!-- Description -->
-              <p class="text-gray-700 text-lg leading-relaxed">
+              <p class="text-gray-700 text-sm leading-relaxed line-clamp-2">
                 {{ currentPlace.description }}
               </p>
 
               <!-- Tags -->
-              <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
                   {{ currentPlace.category }}
                 </span>
-                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                <span class="px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-xs font-medium">
                   {{ currentPlace.type }}
                 </span>
               </div>
 
               <!-- CTAs -->
-              <div class="flex gap-4 pt-4">
+              <div class="flex gap-3 pt-2">
                 <button
                   @click="handleBookNow"
-                  class="flex-1 bg-black text-white font-semibold py-4 px-8 rounded-xl transition-colors shadow-lg hover:shadow-xl"
+                  class="flex-1 bg-black text-white font-semibold py-2.5 px-6 rounded-lg transition-colors shadow-lg hover:shadow-xl text-sm"
                 >
                   Book Now
                 </button>
                 <button
                   @click="handleLearnMore"
-                  class="flex-1 bg-white hover:bg-gray-50 text-gray-900 font-semibold py-4 px-8 rounded-xl border-2 border-gray-300 transition-colors"
+                  class="flex-1 bg-white hover:bg-gray-50 text-gray-900 font-semibold py-2.5 px-6 rounded-lg border-2 border-gray-300 transition-colors text-sm"
                 >
                   Learn More
                 </button>
@@ -115,17 +115,17 @@
           </div>
 
           <!-- Right Side: Map and Municipality Selector -->
-          <div class="space-y-6">
+          <div class="space-y-3" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
             <!-- Municipality Selector -->
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-              <h4 class="text-xl font-bold mb-4">Select Area</h4>
-              <div class="space-y-2 max-h-[300px] overflow-y-auto">
+            <div class="bg-white rounded-xl shadow-lg p-4">
+              <h4 class="text-base font-bold mb-2">Select Area</h4>
+              <div class="space-y-1.5 max-h-[180px] overflow-y-auto">
                 <button
                   v-for="municipality in municipalities"
                   :key="municipality"
                   @click="selectMunicipality(municipality)"
                   :class="[
-                    'w-full text-left px-4 py-3 rounded-lg transition-colors font-medium',
+                    'w-full text-left px-3 py-2 rounded-lg transition-colors font-medium text-sm',
                     selectedMunicipality === municipality
                       ? 'bg-black text-white'
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
@@ -140,23 +140,23 @@
             </div>
 
             <!-- Places in Selected Municipality -->
-            <div v-if="availablePlaces.length > 0" class="bg-white rounded-2xl shadow-lg p-6">
-              <h4 class="text-xl font-bold mb-4">Places ({{ availablePlaces.length }})</h4>
-              <div class="space-y-2 max-h-[400px] overflow-y-auto">
+            <div v-if="availablePlaces.length > 0" class="bg-white rounded-xl shadow-lg p-4">
+              <h4 class="text-base font-bold mb-2">Places ({{ availablePlaces.length }})</h4>
+              <div class="space-y-1.5 max-h-[280px] overflow-y-auto">
                 <button
                   v-for="(place, index) in availablePlaces"
                   :key="place.id"
                   @click="selectPlace(index)"
                   :class="[
-                    'w-full text-left px-4 py-3 rounded-lg transition-colors',
+                    'w-full text-left px-3 py-2 rounded-lg transition-colors',
                     index === currentPlaceIndex
                       ? 'bg-black text-white'
                       : 'bg-gray-50 hover:bg-gray-100 border-2 border-transparent text-black'
                   ]"
                 >
-                  <div class="font-medium">{{ place.name }}</div>
-                  <div class="text-sm flex items-center gap-1 mt-1">
-                    <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                  <div class="font-medium text-sm">{{ place.name }}</div>
+                  <div class="text-xs flex items-center gap-1 mt-0.5">
+                    <svg class="w-3 h-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                     {{ place.rating }}
@@ -295,5 +295,13 @@ onMounted(() => {
 
 .overflow-y-auto::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Line clamp for description */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>

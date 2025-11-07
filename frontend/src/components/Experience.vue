@@ -9,8 +9,9 @@
                 </p>
             </div>
         </div>
-
-        <ImageGrid />
+        <div class="w-screen">
+            <ImageGrid />
+        </div>
     </div>
 </template>
 
