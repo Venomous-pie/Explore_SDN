@@ -152,7 +152,7 @@ image_mappings = {
         "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/3a/0e/1d/the-view.jpg?w=800&h=500&s=1",
         "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/3a/0e/1c/a-relaxing-massage-at.jpg?w=900&h=500&s=1",
         "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/3a/0e/1b/massage-at-the-viewdeck.jpg?w=800&h=500&s=1",
-        "https://images.unsplash.com/photo-1473496169904-658ba7f44f30?w=800&q=80"
+        "https://www.blisssiargao.com/wp-content/uploads/2024/02/View-from-Canijugan-Peak-824x1030.jpeg"
     ],
     "Siargao Wake Park": [
         "https://static.wixstatic.com/media/ec917f_fbf1a402604a4987b6c451f29fab6e8e~mv2.jpg/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ec917f_fbf1a402604a4987b6c451f29fab6e8e~mv2.jpg",
@@ -167,13 +167,13 @@ image_mappings = {
         "https://images.unsplash.com/photo-1473496169904-658ba7f44f30?w=800&q=80"
     ],
     "Bayatakan Farm Experience": [
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
-        "https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?w=800&q=80",
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+        "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/2e/03/f2.jpg",
+        "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/2e/04/1f.jpg",
+        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/1a/1b/18/photo5jpg.jpg?w=1400&h=-1&s=1",
         "https://images.unsplash.com/photo-1473496169904-658ba7f44f30?w=800&q=80"
     ],
     "General Luna Market": [
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80",
+        "https://pinaywise.com/wp-content/uploads/2024/03/Explore-the-Local-Markets-for-fresh-produce-and-souvenirs-Siargao-Philippines.jpg",
         "https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?w=800&q=80",
         "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
         "https://images.unsplash.com/photo-1473496169904-658ba7f44f30?w=800&q=80"
