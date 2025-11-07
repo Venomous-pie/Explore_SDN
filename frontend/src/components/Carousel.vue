@@ -14,6 +14,12 @@ let autoplayInterval: number | null = null
 
 const currentPlace = computed(() => dataStore.places[currentIndex.value])
 
+// Watch for index changes to trigger lazy loading
+watch(currentIndex, async (newIndex) => {
+    // Notify store about index change for lazy loading
+    await dataStore.onImageIndexChange(newIndex)
+})
+
 watch(() => currentPlace.value?.images[0], (newSrc) => {
     if (!newSrc) return
     imageLoaded.value = false
@@ -77,7 +83,7 @@ const handleWheel = (e: WheelEvent) => {
 <template>
     <div class="h-screen z-0">
         <!-- Loading State -->
-        <div v-if="dataStore.loading" class="flex h-full w-full items-center justify-center bg-gray-900">
+        <div v-if="dataStore.loading" class="flex h-full w-screen items-center justify-center bg-gray-900">
             <div class="text-center">
                 <div class="i-carbon-circle-dash animate-spin text-6xl text-white mb-4" />
                 <p class="text-white text-xl">Loading amazing places...</p>
@@ -85,7 +91,7 @@ const handleWheel = (e: WheelEvent) => {
         </div>
 
         <!-- Error State -->
-        <div v-else-if="dataStore.error" class="flex h-full w-full items-center justify-center bg-gray-900">
+        <div v-else-if="dataStore.error" class="flex h-full w-screen items-center justify-center bg-gray-900">
             <div class="text-center text-red-400">
                 <div class="i-carbon-warning text-6xl mb-4" />
                 <p class="text-xl">{{ dataStore.error }}</p>

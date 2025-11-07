@@ -1,7 +1,7 @@
 <template>
     <div class="w-full py-6 px-6 max-h-screen overflow-hidden">
         <!-- Header -->
-        <div class="flex justify-between items-center mb-4" data-aos="fade-down" data-aos-duration="800">
+        <div class="flex justify-between items-center mb-4">
           <h2 class="text-6xl font-serif">Pick your place</h2>
           <span class="text-sm text-gray-600">Explore Surigao del Norte</span>
         </div>
@@ -9,7 +9,7 @@
         <!-- Main Content -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <!-- Left Side: Image Carousel, Description, CTAs -->
-          <div class="lg:col-span-2 space-y-3" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+          <div class="lg:col-span-2 space-y-3">
             <!-- Image Carousel -->
             <div class="relative w-full h-[320px] bg-gray-200 rounded-xl overflow-hidden group">
               <div v-if="currentPlace && currentImages.length > 0" class="relative w-full h-full">
@@ -115,7 +115,7 @@
           </div>
 
           <!-- Right Side: Map and Municipality Selector -->
-          <div class="space-y-3" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+          <div class="space-y-3">
             <!-- Municipality Selector -->
             <div class="bg-white rounded-xl shadow-lg p-4">
               <h4 class="text-base font-bold mb-2">Select Area</h4>
@@ -171,7 +171,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore'
 import { useImages } from '@/composables/useImages'
 import type { Place } from '@/services/api'
@@ -183,6 +183,11 @@ const { getImageSrc } = useImages()
 const currentPlaceIndex = ref(0)
 const currentImageIndex = ref(0)
 const selectedMunicipality = ref<string>('')
+
+// Watch for place index changes to trigger lazy loading
+watch(currentPlaceIndex, async (newIndex) => {
+  await dataStore.onImageIndexChange(newIndex)
+})
 
 // Get all municipalities
 const municipalities = computed(() => {
@@ -301,6 +306,7 @@ onMounted(() => {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

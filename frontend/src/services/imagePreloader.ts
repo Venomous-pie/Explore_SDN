@@ -44,8 +44,6 @@ async function load(url: string): Promise<HTMLImageElement> {
     return new Promise((resolve, reject) => {
         try {
             const img = new Image()
-            // Allow CORS images to be used in canvas if needed
-            img.crossOrigin = 'anonymous'
             img.onload = () => {
                 cache.set(url, img)
                 resolve(img)

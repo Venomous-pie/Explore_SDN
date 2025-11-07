@@ -1,15 +1,15 @@
 <template>
     <div class="p-16">
         <div class="flex justify-between">
-            <div data-aos="fade-right" data-aos-delay="100">
+            <div>
                 <span class="text-sm">Explore SDN</span>
             </div>
-            <div class="max-w-lg" data-aos="fade-up" data-aos-delay="200">
+            <div class="max-w-lg">
                 <span class="text-6xl font-serif">The unmatched beauty of </span>
                 <br>
                 <span class="text-6xl font-serif">Surigao del Norte</span>
             </div>
-            <div class="max-w-lg" data-aos="fade-left" data-aos-delay="300">
+            <div class="max-w-lg">
                 <span class="text-xs">
                     Surigao del Norte is a province in the Caraga region of Mindanao, Philippines, known for its
                     stunning
@@ -31,7 +31,7 @@
         </div>
 
         <div class="flex gap-2 mt-16 items-end">
-            <div class="flex gap-2 h-full w-full items-end" data-aos="fade-right" data-aos-delay="200">
+            <div class="flex gap-2 h-full w-full items-end">
                 <!-- Featured Image -->
                 <div class="h-150 bg-gray-200 rounded-2xl w-full overflow-hidden relative group shadow-2xl border-4 border-white">
                     <img
@@ -78,7 +78,7 @@
                 </div>
             </div>
             
-            <div class="flex gap-2 h-full w-full items-end" data-aos="fade-left" data-aos-delay="200">
+            <div class="flex gap-2 h-full w-full items-end">
                 <!-- Reviews and Rating -->
                 <div class="h-120 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white hover:shadow-3xl transition-shadow duration-300">
                     <h4 class="text-xl font-bold mb-4">Top Rated</h4>

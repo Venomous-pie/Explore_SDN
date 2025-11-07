@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 import { onMounted } from 'vue'
 import { useDataStore } from '@/stores/dataStore'
-import Footer from './components/Footer.vue'
 
 const dataStore = useDataStore()
 
 onMounted(async () => {
-  // Initialize centralized data store
-  // This will fetch all data and preload images automatically
   await dataStore.fetchAllData()
 })
 </script>

@@ -8,8 +8,12 @@ import SDN from '@/components/SDN.vue';
 
 <template>
   <div class="h-full">
-    <Carousel />
-    <Highlight />
+    <div class="w-screen overflow-x-hidden">
+      <Carousel />
+    </div>
+    <div class="w-screen">
+      <Highlight />
+    </div>
     <div class="flex justify-center p-16">
       <Experience />
     </div>

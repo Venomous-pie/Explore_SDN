@@ -2,8 +2,6 @@
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore'
 import { useImages } from '@/composables/useImages'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 const dataStore = useDataStore()
 const { getImageSrc } = useImages()
@@ -115,14 +113,6 @@ watch(() => allImages.value.length, () => {
 }, { immediate: true })
 
 onMounted(() => {
-  // Initialize AOS
-  AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: false,
-    mirror: true
-  })
-  
   // Start scrolling after a short delay
   setTimeout(() => {
     if (allImages.value.length > 0) {
@@ -153,8 +143,6 @@ onUnmounted(() => {
           :key="image.id"
           class="masonry-item rounded-lg overflow-hidden shadow-lg relative group cursor-pointer"
           :style="{ height: `${image.height}px`, width: '300px' }"
-          data-aos="fade-up"
-          data-aos-delay="100"
         >
           <img 
             :src="getImageSrc(image.url)" 

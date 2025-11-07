@@ -44,7 +44,6 @@ export function useImages() {
 
     return new Promise((resolve, reject) => {
       const img = new Image()
-      img.crossOrigin = 'anonymous'
       
       img.onload = () => {
         loadedImages.value.add(url)

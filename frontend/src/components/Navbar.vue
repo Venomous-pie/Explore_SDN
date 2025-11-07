@@ -98,7 +98,7 @@
                                         <h3 class="text-lg font-semibold line-clamp-2 mb-1">{{ place.name }}</h3>
                                         <div class="flex items-center gap-2 text-sm">
                                             <div class="flex items-center gap-1">
-                                                <div class="i-mdi-star-full text-yellow-400"></div>
+                                                <div class="i-carbon-star-filled text-yellow-400"></div>
                                                 <span>{{ place.rating }}</span>
                                             </div>
                                             <span class="text-white/70">({{ place.totalRatings }})</span>

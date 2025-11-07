@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { fetchPlaces, type Place } from '@/services/api'
-import { preloadImages } from '@/services/imagePreloader'
+import { ProgressiveImageLoader } from '@/services/lazyImageLoader'
 
 export const useDataStore = defineStore('data', () => {
   // State
@@ -12,6 +12,9 @@ export const useDataStore = defineStore('data', () => {
   const error = ref<string | null>(null)
   const imagesPreloaded = ref(false)
   const imageLoadProgress = ref({ loaded: 0, total: 0 })
+  
+  // Lazy image loader instance
+  let imageLoader: ProgressiveImageLoader | null = null
 
   // Computed
   const allImages = computed(() => {
@@ -73,8 +76,8 @@ export const useDataStore = defineStore('data', () => {
 
       places.value = placesData
       
-      // Preload images after data is loaded
-      await preloadAllImages()
+      // Initialize lazy loader and load initial batch
+      await initializeLazyLoader()
     } catch (err) {
       error.value = err instanceof Error ? err.message : 'Failed to fetch data'
       console.error('Error fetching data:', err)
@@ -83,24 +86,36 @@ export const useDataStore = defineStore('data', () => {
     }
   }
 
-  async function preloadAllImages() {
-    if (imagesPreloaded.value || allImages.value.length === 0) {
+  async function initializeLazyLoader() {
+    if (imageLoader || allImages.value.length === 0) {
       return
     }
 
     try {
-      await preloadImages(
+      // Create loader with batch size of 3 images
+      imageLoader = new ProgressiveImageLoader(
         allImages.value,
-        (loaded, total) => {
-          imageLoadProgress.value = { loaded, total }
-        },
-        6 // concurrency
+        3,
+        (loaded: number, total: number) => {
+          const progress = imageLoader?.getProgress()
+          if (progress) {
+            imageLoadProgress.value = { loaded: progress.loaded, total: progress.total }
+          }
+        }
       )
-      imagesPreloaded.value = true
+      
+      // Load only the initial batch (2-3 images)
+      await imageLoader.loadInitial()
+      console.log('Initial images loaded:', imageLoader.getProgress())
     } catch (err) {
-      console.warn('Some images failed to preload:', err)
-      // Don't throw - partial preload is acceptable
-      imagesPreloaded.value = true
+      console.warn('Failed to initialize lazy loader:', err)
+    }
+  }
+  
+  // Function to handle image navigation - preload next batch when needed
+  async function onImageIndexChange(currentIndex: number) {
+    if (imageLoader) {
+      await imageLoader.onIndexChange(currentIndex)
     }
   }
 
@@ -135,6 +150,7 @@ export const useDataStore = defineStore('data', () => {
     error.value = null
     imagesPreloaded.value = false
     imageLoadProgress.value = { loaded: 0, total: 0 }
+    imageLoader = null
   }
 
   return {
@@ -155,7 +171,8 @@ export const useDataStore = defineStore('data', () => {
     
     // Actions
     fetchAllData,
-    preloadAllImages,
+    initializeLazyLoader,
+    onImageIndexChange,
     getPlaceById,
     getPlacesByType,
     getPlacesByMunicipality,
