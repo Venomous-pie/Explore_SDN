@@ -8,10 +8,10 @@
 
         <div class="flex items-center gap-2 flex-shrink-0" :class="{ 'opacity-0': expanded }">
             <!-- Hamburger Menu Button with Animation -->
-            <div     
-                @click="toggleMenu" 
-                class="cursor-pointer hover:bg-gray-100 rounded-full p-1.5 transition-all duration-300"
-                aria-label="Menu"
+            <div 
+                ref="menuButton"
+                @click="toggleMenu"
+                class="flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-100 transition-colors cursor-pointer"
             >
                 <Transition 
                     mode="out-in"
@@ -41,7 +41,7 @@
         <Transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-2"
             enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
             leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-2">
-            <div v-if="menuOpen" v-on-click-outside="closeMenu"
+            <div v-if="menuOpen" v-on-click-outside="handleClickOutsideMenu"
                 class="absolute top-14 left-4 bg-white rounded-2xl shadow-2xl py-4 px-2 w-64 z-50">
                 <nav class="flex flex-col">
                     <router-link to="/explore" @click="closeMenu"
@@ -112,18 +112,74 @@
                 <span class="text-sm">Search</span>
             </div>
 
-            <!-- Sign in button / User Avatar -->
+            <!-- Sign in button / User Profile Dropdown -->
             <div v-if="!isAuthenticated" 
                 @click="showAuthModal = true"
                 class="bg-black text-white rounded-full text-sm px-3 py-1 cursor-pointer hover:bg-gray-800 transition-colors"
                 :class="{ 'opacity-0': expanded }">
                 <span>Sign in</span>
             </div>
-            <div v-else
-                @click="handleSignOut"
-                class="bg-black text-white rounded-full text-sm px-3 py-1 cursor-pointer hover:bg-gray-800 transition-colors"
-                :class="{ 'opacity-0': expanded }">
-                <span>Sign out</span>
+            <div v-else class="relative" :class="{ 'opacity-0': expanded }">
+                <!-- User Profile Button -->
+                <div ref="userMenuButton" @click="toggleUserMenu"
+                    class="flex items-center gap-1.5 cursor-pointer hover:bg-gray-100 rounded-full px-2 py-1 transition-all duration-300">
+                    <!-- Avatar -->
+                    <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+                        <div class="i-mdi-account text-gray-600 text-sm"></div>
+                    </div>
+                    <!-- Name -->
+                    <span class="text-xs font-medium text-gray-900">{{ currentUser?.name || 'User' }}</span>
+                    <!-- Animated Chevron -->
+                    <Transition 
+                        mode="out-in"
+                        enter-active-class="transition-all duration-200 ease-out"
+                        enter-from-class="rotate-180 opacity-0"
+                        enter-to-class="rotate-0 opacity-100"
+                        leave-active-class="transition-all duration-200 ease-in"
+                        leave-from-class="rotate-0 opacity-100"
+                        leave-to-class="rotate-180 opacity-0">
+                        <div 
+                            v-if="!userMenuOpen" 
+                            :key="'down'"
+                            class="i-mdi-chevron-down text-sm text-gray-600"></div>
+                        <div 
+                            v-else 
+                            :key="'up'"
+                            class="i-mdi-chevron-up text-sm text-gray-600"></div>
+                    </Transition>
+                </div>
+                
+                <!-- User Dropdown Menu -->
+                <Transition
+                    enter-active-class="transition ease-out duration-200"
+                    enter-from-class="opacity-0 translate-y-2"
+                    enter-to-class="opacity-100 translate-y-0"
+                    leave-active-class="transition ease-in duration-150"
+                    leave-from-class="opacity-100 translate-y-0"
+                    leave-to-class="opacity-0 translate-y-2">
+                    <div v-if="userMenuOpen" v-on-click-outside="handleClickOutsideUserMenu"
+                        class="absolute right-0 top-10 bg-white rounded-2xl shadow-2xl py-2 px-2 w-56 z-50">
+                        <!-- User Info Section -->
+                        <div class="px-3 py-2 border-b border-gray-200">
+                            <div class="flex items-center gap-2">
+                                <div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+                                    <div class="i-mdi-account text-gray-600 text-xl"></div>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-xs font-semibold text-gray-900 truncate">{{ currentUser?.name || 'User' }}</p>
+                                    <p class="text-xs text-gray-500 truncate">{{ currentUser?.email || 'user@example.com' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sign Out Button -->
+                        <div @click="handleSignOut"
+                            class="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 outline outline-1 outline-gray-500 rounded-xl transition-colors text-xs font-semibold text-red-600 mt-1">
+                            <div class="i-mdi-logout text-base"></div>
+                            <span>Sign out</span>
+                    </div>
+                    </div>
+                </Transition>
             </div>
 
             <!-- Expanded search container -->
@@ -236,6 +292,9 @@ const dataStore = useDataStore();
 const { isAuthenticated, currentUser } = useAuth();
 const expanded = ref(false);
 const menuOpen = ref(false);
+const userMenuOpen = ref(false);
+const menuButton = ref<HTMLElement | null>(null);
+const userMenuButton = ref<HTMLElement | null>(null);
 const searchQuery = ref('');
 const debouncedQuery = ref('');
 const searchInput = ref<HTMLInputElement | null>(null);
@@ -312,9 +371,34 @@ const closeMenu = () => {
     menuOpen.value = false;
 };
 
+const handleClickOutsideMenu = (event: Event) => {
+    // Check if the click is on the toggle button
+    if (menuButton.value && menuButton.value.contains(event.target as Node)) {
+        return; // Don't close if clicking the button
+    }
+    closeMenu();
+};
+
+const toggleUserMenu = () => {
+    userMenuOpen.value = !userMenuOpen.value;
+};
+
+const closeUserMenu = () => {
+    userMenuOpen.value = false;
+};
+
+const handleClickOutsideUserMenu = (event: Event) => {
+    // Check if the click is on the toggle button
+    if (userMenuButton.value && userMenuButton.value.contains(event.target as Node)) {
+        return; // Don't close if clicking the button
+    }
+    closeUserMenu();
+};
+
 const handleSignOut = () => {
     const { signOut } = useAuth();
     signOut();
+    closeUserMenu();
 };
 </script>
 

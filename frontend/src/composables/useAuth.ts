@@ -1,24 +1,26 @@
 import { ref, computed } from 'vue'
 
+const API_URL = 'http://localhost:3000/api'
+
 // User interface
 export interface User {
-    id: string
+    id: number
     name: string
     email: string
-    avatar: string
+    avatar?: string
 }
 
 // Auth state (shared across all components)
 const isAuthenticated = ref(false)
 const currentUser = ref<User | null>(null)
 const isLoading = ref(false)
+const authToken = ref<string | null>(null)
 
 // Storage keys
-const AUTH_KEY = 'isAuthenticated'
-const USER_KEY = 'currentUser'
+const TOKEN_KEY = 'auth_token'
 
 /**
- * Authentication composable
+ * Authentication composable with JWT and persistent login
  * Provides centralized authentication state and methods
  */
 export function useAuth() {
@@ -28,20 +30,41 @@ export function useAuth() {
         return `https://i.pravatar.cc/150?img=${randomNum}`
     }
 
-    // Initialize auth from localStorage
-    const initAuth = () => {
-        const savedAuth = localStorage.getItem(AUTH_KEY)
-        const savedUser = localStorage.getItem(USER_KEY)
-
-        if (savedAuth === 'true' && savedUser) {
+    // Initialize auth from token (persistent login)
+    const initAuth = async () => {
+        const token = localStorage.getItem(TOKEN_KEY)
+        
+        if (token) {
+            authToken.value = token
             try {
-                currentUser.value = JSON.parse(savedUser)
-                isAuthenticated.value = true
-            } catch (e) {
-                console.error('Error loading user data:', e)
-                // Clear invalid data
-                localStorage.removeItem(AUTH_KEY)
-                localStorage.removeItem(USER_KEY)
+                // Verify token with backend
+                const response = await fetch(`${API_URL}/auth/verify`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    credentials: 'include'
+                })
+
+                if (response.ok) {
+                    const data = await response.json()
+                    if (data.success) {
+                        currentUser.value = {
+                            ...data.data,
+                            avatar: getRandomAvatar()
+                        }
+                        isAuthenticated.value = true
+                        return
+                    }
+                }
+                
+                // Token invalid, clear it
+                localStorage.removeItem(TOKEN_KEY)
+                authToken.value = null
+            } catch (error) {
+                console.error('Auth verification failed:', error)
+                localStorage.removeItem(TOKEN_KEY)
+                authToken.value = null
             }
         }
     }
@@ -63,29 +86,49 @@ export function useAuth() {
 
         isLoading.value = true
 
-        // Simulate API call
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                // Mock successful sign in
-                const username = email.split('@')[0] || 'user'
-                const user: User = {
-                    id: Date.now().toString(),
-                    name: username.charAt(0).toUpperCase() + username.slice(1),
-                    email: email,
+        try {
+            const response = await fetch(`${API_URL}/auth/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ email, password })
+            })
+
+            const data = await response.json()
+
+            if (response.ok && data.success) {
+                // Save token
+                authToken.value = data.data.token
+                localStorage.setItem(TOKEN_KEY, data.data.token)
+
+                // Set user
+                currentUser.value = {
+                    ...data.data.user,
                     avatar: getRandomAvatar()
                 }
-
-                currentUser.value = user
                 isAuthenticated.value = true
 
-                // Save to localStorage
-                localStorage.setItem(AUTH_KEY, 'true')
-                localStorage.setItem(USER_KEY, JSON.stringify(user))
-
                 isLoading.value = false
-                resolve({ success: true })
-            }, 800)
-        })
+                return { success: true }
+            } else {
+                isLoading.value = false
+                return { success: false, error: data.error || 'Login failed' }
+            }
+        } catch (error) {
+            console.error('Login error:', error)
+            console.error('Error details:', {
+                message: error instanceof Error ? error.message : 'Unknown error',
+                type: typeof error,
+                error: error
+            })
+            isLoading.value = false
+            return { 
+                success: false, 
+                error: error instanceof Error ? error.message : 'Network error. Please check if backend is running on http://localhost:3000' 
+            }
+        }
     }
 
     // Sign up method
@@ -109,43 +152,77 @@ export function useAuth() {
 
         isLoading.value = true
 
-        // Simulate API call
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                // Mock successful sign up
-                const user: User = {
-                    id: Date.now().toString(),
-                    name: name.trim(),
-                    email: email,
+        try {
+            const response = await fetch(`${API_URL}/auth/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify({ name, email, password })
+            })
+
+            const data = await response.json()
+
+            if (response.ok && data.success) {
+                // Save token
+                authToken.value = data.data.token
+                localStorage.setItem(TOKEN_KEY, data.data.token)
+
+                // Set user
+                currentUser.value = {
+                    ...data.data.user,
                     avatar: getRandomAvatar()
                 }
-
-                currentUser.value = user
                 isAuthenticated.value = true
 
-                // Save to localStorage
-                localStorage.setItem(AUTH_KEY, 'true')
-                localStorage.setItem(USER_KEY, JSON.stringify(user))
-
                 isLoading.value = false
-                resolve({ success: true })
-            }, 800)
-        })
+                return { success: true }
+            } else {
+                isLoading.value = false
+                return { success: false, error: data.error || 'Registration failed' }
+            }
+        } catch (error) {
+            console.error('Registration error:', error)
+            console.error('Error details:', {
+                message: error instanceof Error ? error.message : 'Unknown error',
+                type: typeof error,
+                error: error
+            })
+            isLoading.value = false
+            return { 
+                success: false, 
+                error: error instanceof Error ? error.message : 'Network error. Please check if backend is running on http://localhost:3000' 
+            }
+        }
     }
 
     // Sign out method
-    const signOut = () => {
+    const signOut = async () => {
+        try {
+            // Call logout endpoint
+            await fetch(`${API_URL}/auth/logout`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Authorization': `Bearer ${authToken.value}`
+                }
+            })
+        } catch (error) {
+            console.error('Logout error:', error)
+        }
+
+        // Clear local state
         isAuthenticated.value = false
         currentUser.value = null
-        localStorage.removeItem(AUTH_KEY)
-        localStorage.removeItem(USER_KEY)
+        authToken.value = null
+        localStorage.removeItem(TOKEN_KEY)
     }
 
     // Update user profile
     const updateUser = (updates: Partial<User>) => {
         if (currentUser.value) {
             currentUser.value = { ...currentUser.value, ...updates }
-            localStorage.setItem(USER_KEY, JSON.stringify(currentUser.value))
         }
     }
 
@@ -154,6 +231,7 @@ export function useAuth() {
         isAuthenticated: computed(() => isAuthenticated.value),
         currentUser: computed(() => currentUser.value),
         isLoading: computed(() => isLoading.value),
+        authToken: computed(() => authToken.value),
 
         // Methods
         initAuth,

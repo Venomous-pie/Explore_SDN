@@ -1,13 +1,23 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: 'http://localhost:5173', // Vite dev server
+  credentials: true // Allow cookies
+}));
 app.use(express.json());
+app.use(cookieParser());
+
+// Auth routes
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
 
 // Load data
 const placesDataPath = path.join(__dirname, 'data', 'places.json');

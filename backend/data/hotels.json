@@ -701,5 +701,539 @@
       "Social",
       "Backpackers"
     ]
+  },
+  {
+    "id": 19,
+    "name": "Siargao Bleu Resort & Spa",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.7,
+    "totalRatings": 250,
+    "description": "4-star beachfront resort offering luxury accommodations with spa services. Located in the heart of General Luna, close to Cloud 9 and other major attractions.",
+    "priceLevel": 4,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱4000-8000 per night",
+    "highlights": [
+      "Beachfront",
+      "Spa Services",
+      "4-Star"
+    ],
+    "tags": [
+      "Beachfront",
+      "Spa Services",
+      "4-Star"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 20,
+    "name": "Nay Palad Hideaway",
+    "category": "Hotel",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.9,
+    "totalRatings": 180,
+    "description": "5-star luxury resort offering exclusive hideaway experience. Premium accommodations with world-class amenities and services.",
+    "priceLevel": 5,
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlXR9C4TtSQYmLqg23e9hZNIGeXjAhbAk3g&s"
+    ],
+    "amenities": [],
+    "priceRange": "₱5000-10000 per night",
+    "highlights": [
+      "5-Star Luxury",
+      "Exclusive",
+      "Premium Amenities"
+    ],
+    "tags": [
+      "5-Star Luxury",
+      "Exclusive",
+      "Premium Amenities"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 21,
+    "name": "The Ohm Siargao Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 9.5,
+    "totalRatings": 320,
+    "description": "Highly rated resort located 5-minute drive to Tourism Road. Modern amenities with excellent service and comfortable accommodations.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Rated 9.5",
+      "Near Tourism Road",
+      "Modern Amenities"
+    ],
+    "tags": [
+      "Rated 9.5",
+      "Near Tourism Road",
+      "Modern Amenities"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 22,
+    "name": "Woody's Place Siargao",
+    "category": "Hotel",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 290,
+    "description": "Steps from General Luna Beach with pool and rooftop area featuring high-speed WiFi. Perfect for digital nomads and beach lovers.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Beachfront",
+      "Pool",
+      "High-Speed WiFi",
+      "Rooftop"
+    ],
+    "tags": [
+      "Beachfront",
+      "Pool",
+      "High-Speed WiFi",
+      "Rooftop"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 23,
+    "name": "Siargo Beach Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 210,
+    "description": "Boutique beach resort featuring pool, restaurant, and bar. Intimate setting with personalized service and beachfront access.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Boutique Resort",
+      "Pool",
+      "Restaurant & Bar",
+      "Beachfront"
+    ],
+    "tags": [
+      "Boutique Resort",
+      "Pool",
+      "Restaurant & Bar",
+      "Beachfront"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 24,
+    "name": "Kalipay Resort Siargao",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 340,
+    "description": "Popular beachfront resort offering comfortable accommodations with direct beach access. Well-known among travelers for its excellent location and service.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Beachfront",
+      "Popular Choice",
+      "Direct Beach Access"
+    ],
+    "tags": [
+      "Beachfront",
+      "Popular Choice",
+      "Direct Beach Access"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 25,
+    "name": "Las Palmas Villas",
+    "category": "Hotel",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.8,
+    "totalRatings": 195,
+    "description": "Luxury villa accommodations with beautiful pool area. High-end amenities and exclusive atmosphere for discerning travelers.",
+    "priceLevel": 4,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱4000-8000 per night",
+    "highlights": [
+      "Luxury Villas",
+      "Beautiful Pool",
+      "High-End"
+    ],
+    "tags": [
+      "Luxury Villas",
+      "Beautiful Pool",
+      "High-End"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 26,
+    "name": "Kermit Surf Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 410,
+    "description": "Surf-focused resort located 200m from Cemetery surf spot and 2km from Cloud 9. Features the famous Kermit Restaurant with brick oven pizza.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Surf Resort",
+      "Near Cemetery Surf Spot",
+      "On-site Restaurant"
+    ],
+    "tags": [
+      "Surf Resort",
+      "Near Cemetery Surf Spot",
+      "On-site Restaurant"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 27,
+    "name": "Ocean 101 Beach Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.4,
+    "totalRatings": 275,
+    "description": "3-star beachfront resort with on-site restaurant. Comfortable accommodations with direct beach access and dining options.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "3-Star",
+      "Beachfront",
+      "On-site Restaurant"
+    ],
+    "tags": [
+      "3-Star",
+      "Beachfront",
+      "On-site Restaurant"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 28,
+    "name": "Hue Hotels and Resorts Siargao",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 310,
+    "description": "Modern hotel near General Luna Beach offering comfortable rooms and contemporary amenities. Convenient location for exploring the island.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Modern",
+      "Near Beach",
+      "Contemporary Amenities"
+    ],
+    "tags": [
+      "Modern",
+      "Near Beach",
+      "Contemporary Amenities"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 29,
+    "name": "Mad Monkey Hostel Siargao",
+    "category": "Hostel",
+    "type": "Resort",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.3,
+    "totalRatings": 520,
+    "description": "Budget-friendly hostel located 7-minute walk from Cloud 9. Social atmosphere perfect for backpackers and solo travelers. Features Mad Monkey Kitchen with great value meals.",
+    "priceLevel": 1,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱1000-2000 per night",
+    "highlights": [
+      "Budget-Friendly",
+      "Near Cloud 9",
+      "Social Atmosphere",
+      "On-site Kitchen"
+    ],
+    "tags": [
+      "Budget-Friendly",
+      "Near Cloud 9",
+      "Social Atmosphere",
+      "On-site Kitchen"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 30,
+    "name": "Pacifico Beach Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.6,
+    "totalRatings": 185,
+    "description": "Beachfront resort in Northern Siargao with on-site restaurant and lounge. Located about 1 hour from General Luna, offering a quieter beach experience.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Beachfront",
+      "On-site Restaurant",
+      "Northern Siargao",
+      "Quiet Location"
+    ],
+    "tags": [
+      "Beachfront",
+      "On-site Restaurant",
+      "Northern Siargao",
+      "Quiet Location"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 31,
+    "name": "Pacifico Bigwish Beach Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.7,
+    "totalRatings": 142,
+    "description": "Highly rated beachfront resort at Pacifico Beach. Peaceful setting away from the crowds with excellent service.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Highly Rated",
+      "Beachfront",
+      "Peaceful Setting"
+    ],
+    "tags": [
+      "Highly Rated",
+      "Beachfront",
+      "Peaceful Setting"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 32,
+    "name": "LaFinca Hostel Siargao",
+    "category": "Hostel",
+    "type": "Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.4,
+    "totalRatings": 168,
+    "description": "Budget-friendly hostel steps from Pacifico Beach with surf board rentals available. Great for surfers and budget travelers.",
+    "priceLevel": 1,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱1000-2000 per night",
+    "highlights": [
+      "Budget-Friendly",
+      "Steps from Beach",
+      "Surf Board Rentals"
+    ],
+    "tags": [
+      "Budget-Friendly",
+      "Steps from Beach",
+      "Surf Board Rentals"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 33,
+    "name": "Cabanas Pacifico Siargao Tourist Inn",
+    "category": "Hotel",
+    "type": "Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.5,
+    "totalRatings": 155,
+    "description": "Steps from beach with on-site restaurant serving local and Asian cuisine. Comfortable cabana-style accommodations.",
+    "priceLevel": 2,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱2000-4000 per night",
+    "highlights": [
+      "Steps from Beach",
+      "On-site Restaurant",
+      "Cabana-Style"
+    ],
+    "tags": [
+      "Steps from Beach",
+      "On-site Restaurant",
+      "Cabana-Style"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 34,
+    "name": "Coleto Siargao",
+    "category": "Hotel",
+    "type": "Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.7,
+    "totalRatings": 128,
+    "description": "Beautiful property with lush greenery and cute bungalows. Massage services available. Tranquil atmosphere perfect for relaxation.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Beautiful Greenery",
+      "Cute Bungalows",
+      "Massage Services",
+      "Tranquil"
+    ],
+    "tags": [
+      "Beautiful Greenery",
+      "Cute Bungalows",
+      "Massage Services",
+      "Tranquil"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 35,
+    "name": "Darosa Del Mar Beach Resort",
+    "category": "Resort",
+    "type": "Resort",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.6,
+    "totalRatings": 95,
+    "description": "Private beach resort offering exclusive beach access and peaceful surroundings. Ideal for those seeking privacy and tranquility.",
+    "priceLevel": 3,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱3000-6000 per night",
+    "highlights": [
+      "Private Beach",
+      "Exclusive Access",
+      "Peaceful"
+    ],
+    "tags": [
+      "Private Beach",
+      "Exclusive Access",
+      "Peaceful"
+    ],
+    "contact": {},
+    "bookingUrl": ""
+  },
+  {
+    "id": 36,
+    "name": "NOGS Homestay",
+    "category": "Hotel",
+    "type": "Resort",
+    "municipality": "Pilar",
+    "island": "Siargao",
+    "latitude": 9.82,
+    "longitude": 126.12,
+    "rating": 4.3,
+    "totalRatings": 87,
+    "description": "Homestay near Magpupungko Rock Pools, 1.7 miles from beach. Convenient base for exploring northern Siargao attractions.",
+    "priceLevel": 1,
+    "images": [],
+    "amenities": [],
+    "priceRange": "₱1000-2000 per night",
+    "highlights": [
+      "Near Magpupungko",
+      "Homestay",
+      "Budget-Friendly"
+    ],
+    "tags": [
+      "Near Magpupungko",
+      "Homestay",
+      "Budget-Friendly"
+    ],
+    "contact": {},
+    "bookingUrl": ""
   }
 ]

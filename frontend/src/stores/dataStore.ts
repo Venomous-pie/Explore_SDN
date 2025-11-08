@@ -12,7 +12,7 @@ export const useDataStore = defineStore('data', () => {
   const error = ref<string | null>(null)
   const imagesPreloaded = ref(false)
   const imageLoadProgress = ref({ loaded: 0, total: 0 })
-  
+
   // Lazy image loader instance
   let imageLoader: ProgressiveImageLoader | null = null
 
@@ -76,7 +76,7 @@ export const useDataStore = defineStore('data', () => {
       places.value = placesData
       dining.value = diningData
       hotels.value = hotelsData
-      
+
       // Initialize lazy loader and load initial batch
       await initializeLazyLoader()
     } catch (err) {
@@ -104,7 +104,7 @@ export const useDataStore = defineStore('data', () => {
           }
         }
       )
-      
+
       // Load only the initial batch (2-3 images)
       await imageLoader.loadInitial()
       console.log('Initial images loaded:', imageLoader.getProgress())
@@ -112,7 +112,7 @@ export const useDataStore = defineStore('data', () => {
       console.warn('Failed to initialize lazy loader:', err)
     }
   }
-  
+
   // Function to handle image navigation - preload next batch when needed
   async function onImageIndexChange(currentIndex: number) {
     if (imageLoader) {
@@ -163,13 +163,13 @@ export const useDataStore = defineStore('data', () => {
     error,
     imagesPreloaded,
     imageLoadProgress,
-    
+
     // Computed
     allImages,
     placesByType,
     placesByMunicipality,
     topRatedPlaces,
-    
+
     // Actions
     fetchAllData,
     initializeLazyLoader,

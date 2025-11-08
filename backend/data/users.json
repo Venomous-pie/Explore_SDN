@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Test User",
+    "email": "test1762593178665@example.com",
+    "password": "$2b$10$taS0shsL8nsCp65qVHn01eC9ux7CZxC8uNQT.x20tIae8/3ShlQZi",
+    "createdAt": "2025-11-08T09:12:59.045Z"
+  },
+  {
+    "id": 2,
+    "name": "HelloWorld",
+    "email": "email@gmail.com",
+    "password": "$2b$10$qAL6e.Wk3gsnsbW3pgOG4.SPFWrVUq192162jJjWPg2Mcfx.2op0m",
+    "createdAt": "2025-11-08T09:47:28.891Z"
+  }
+]

@@ -10,7 +10,11 @@ const { loadImage } = useImages()
 const currentIndex = ref(0)
 const imageLoaded = ref(false)
 const highlightsRef = ref<HTMLElement | null>(null)
+const progress = ref(0)
+const isTransitioning = ref(false)
+const startTime = ref(Date.now())
 let autoplayInterval: number | null = null
+let progressInterval: number | null = null
 
 const currentPlace = computed(() => dataStore.places[currentIndex.value])
 
@@ -46,9 +50,24 @@ onUnmounted(() => {
 })
 
 const startAutoplay = () => {
-    autoplayInterval = window.setInterval(() => {
-        nextSlide()
-    }, 10000)
+    progress.value = 0
+    startTime.value = Date.now()
+    
+    // Update progress every 50ms for smooth animation (10 second duration)
+    progressInterval = window.setInterval(() => {
+        if (!isTransitioning.value) {
+            const elapsed = Date.now() - startTime.value
+            progress.value = Math.min((elapsed / 10000) * 100, 100)
+        }
+    }, 50)
+    
+    autoplayInterval = window.setInterval(async () => {
+        const elapsed = Date.now() - startTime.value
+        if (!isTransitioning.value && elapsed >= 10000) {
+            await nextSlide()
+            startTime.value = Date.now() // Reset timer after transition
+        }
+    }, 100) // Check more frequently
 }
 
 const stopAutoplay = () => {
@@ -56,14 +75,69 @@ const stopAutoplay = () => {
         clearInterval(autoplayInterval)
         autoplayInterval = null
     }
+    if (progressInterval) {
+        clearInterval(progressInterval)
+        progressInterval = null
+    }
 }
 
-const nextSlide = () => {
-    currentIndex.value = (currentIndex.value + 1) % dataStore.places.length
+const nextSlide = async () => {
+    if (isTransitioning.value) return
+    
+    isTransitioning.value = true
+    const nextIndex = (currentIndex.value + 1) % dataStore.places.length
+    const nextPlace = dataStore.places[nextIndex]
+    
+    if (nextPlace?.images[0]) {
+        try {
+            // Preload next image
+            await loadImage(nextPlace.images[0])
+            // Only transition after image is loaded
+            currentIndex.value = nextIndex
+            progress.value = 0
+            startTime.value = Date.now()
+        } catch (error) {
+            console.warn('Failed to preload image, transitioning anyway:', error)
+            currentIndex.value = nextIndex
+            progress.value = 0
+            startTime.value = Date.now()
+        }
+    } else {
+        currentIndex.value = nextIndex
+        progress.value = 0
+        startTime.value = Date.now()
+    }
+    
+    isTransitioning.value = false
 }
 
-const goToSlide = (index: number) => {
-    currentIndex.value = index
+const goToSlide = async (index: number) => {
+    if (isTransitioning.value) return
+    
+    isTransitioning.value = true
+    const targetPlace = dataStore.places[index]
+    
+    if (targetPlace?.images[0]) {
+        try {
+            // Preload target image
+            await loadImage(targetPlace.images[0])
+            currentIndex.value = index
+            progress.value = 0
+            startTime.value = Date.now()
+        } catch (error) {
+            console.warn('Failed to preload image, transitioning anyway:', error)
+            currentIndex.value = index
+            progress.value = 0
+            startTime.value = Date.now()
+        }
+    } else {
+        currentIndex.value = index
+        progress.value = 0
+        startTime.value = Date.now()
+    }
+    
+    isTransitioning.value = false
+    
     // Reset autoplay when manually changing slides
     stopAutoplay()
     startAutoplay()
@@ -204,19 +278,18 @@ const handleWheel = (e: WheelEvent) => {
                 </div>
             </div>
 
-            <!-- Dots Navigation -->
+            <!-- Progress Bar -->
             <Motion :initial="{ opacity: 0, y: 50 }" :animate="{ opacity: 1, y: 0 }"
                 :transition="{ duration: 0.5, delay: 0.9 }">
-                <div
-                    class="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
-                    <Motion v-for="(place, index) in dataStore.places" :key="place.id" :whileHover="{ scale: 1.2 }"
-                        :whileTap="{ scale: 0.9 }">
-                        <div @click="goToSlide(index)" class="transition-all duration-300" :class="[
-                            index === currentIndex
-                                ? 'w-8 sm:w-12 h-1 sm:h-1 bg-white'
-                                : 'w-2 sm:w-3 h-1 sm:h-1 bg-white/50 hover:bg-white/70'
-                        ]" />
-                    </Motion>
+                <div class="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 w-64 sm:w-96">
+                    <!-- Background bar -->
+                    <div class="h-1 bg-white/30 rounded-full overflow-hidden backdrop-blur-sm">
+                        <!-- Progress fill -->
+                        <div 
+                            class="h-full bg-white rounded-full transition-all duration-100 ease-linear"
+                            :style="{ width: `${progress}%` }"
+                        />
+                    </div>
                 </div>
             </Motion>
         </div>

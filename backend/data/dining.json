@@ -350,5 +350,553 @@
       "Breakfast",
       "Burgos"
     ]
+  },
+  {
+    "id": 12,
+    "name": "Kermit Restaurant",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.7,
+    "totalRatings": 850,
+    "description": "Famous for brick oven pizza and homemade pasta. Located at Kermit Surf Resort, 2km from Cloud 9. One of Siargao's most popular dining destinations.",
+    "priceLevel": 3,
+    "images": [],
+    "specialty": [
+      "Brick Oven Pizza",
+      "Homemade Pasta",
+      "Popular"
+    ],
+    "priceRange": "₱300-900 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Brick Oven Pizza",
+      "Homemade Pasta",
+      "Popular"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Shaka Cafes",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 720,
+    "description": "Vegetarian and vegan-friendly cafe famous for smoothie bowls. Located at Cloud 9 on Tourism Road. Healthy options and fresh ingredients.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Vegetarian/Vegan",
+      "Smoothie Bowls",
+      "Healthy Options"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Vegetarian/Vegan",
+      "Smoothie Bowls",
+      "Healthy Options"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Kaimaná",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.8,
+    "totalRatings": 640,
+    "description": "Highly rated restaurant and local favorite. Known for excellent food quality and service. Popular among both tourists and locals.",
+    "priceLevel": 3,
+    "images": [],
+    "specialty": [
+      "Highly Rated",
+      "Local Favorite",
+      "Excellent Service"
+    ],
+    "priceRange": "₱300-900 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Highly Rated",
+      "Local Favorite",
+      "Excellent Service"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "The Bliss",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 580,
+    "description": "Filipino-Western fusion cuisine near Cloud 9. Creative menu combining local flavors with international techniques.",
+    "priceLevel": 3,
+    "images": [],
+    "specialty": [
+      "Filipino-Western Fusion",
+      "Near Cloud 9",
+      "Creative Menu"
+    ],
+    "priceRange": "₱300-900 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Filipino-Western Fusion",
+      "Near Cloud 9",
+      "Creative Menu"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Kawayan Siargao Restaurant",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.7,
+    "totalRatings": 510,
+    "description": "Fine dining restaurant featuring fresh seafood and Japanese-inspired dishes. Upscale atmosphere with quality ingredients.",
+    "priceLevel": 4,
+    "images": [],
+    "specialty": [
+      "Fine Dining",
+      "Fresh Seafood",
+      "Japanese-Inspired"
+    ],
+    "priceRange": "₱400-1200 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Fine Dining",
+      "Fresh Seafood",
+      "Japanese-Inspired"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Warung Siargao",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 490,
+    "description": "Authentic Indonesian fare on Tourism Road. Brings the flavors of Indonesia to Siargao with traditional recipes.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Indonesian Cuisine",
+      "Authentic",
+      "Tourism Road"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Indonesian Cuisine",
+      "Authentic",
+      "Tourism Road"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Green Waves Café",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.7,
+    "totalRatings": 680,
+    "description": "Best smoothie bowls on the island with great breakfast options. Popular morning spot for healthy and delicious meals.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Best Smoothie Bowls",
+      "Great Breakfast",
+      "Healthy Options"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Best Smoothie Bowls",
+      "Great Breakfast",
+      "Healthy Options"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Goodies Cafe and Restaurant",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 420,
+    "description": "Conveniently located on Tourism Road between General Luna and Cloud 9. Offers variety of dishes in a casual setting.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Tourism Road",
+      "Convenient Location",
+      "Casual Dining"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Tourism Road",
+      "Convenient Location",
+      "Casual Dining"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Mad Monkey Kitchen",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.4,
+    "totalRatings": 530,
+    "description": "Great value pasta and pizza with vegan and vegetarian options. Located at Mad Monkey Hostel, popular among backpackers.",
+    "priceLevel": 1,
+    "images": [],
+    "specialty": [
+      "Great Value",
+      "Pasta & Pizza",
+      "Vegan/Vegetarian Options"
+    ],
+    "priceRange": "₱100-300 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Great Value",
+      "Pasta & Pizza",
+      "Vegan/Vegetarian Options"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Cevicheria",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.8,
+    "totalRatings": 390,
+    "description": "Best kinilaw (Filipino ceviche) on the island. Fresh seafood prepared in traditional style. Located in Catangnan.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Best Kinilaw/Ceviche",
+      "Fresh Seafood",
+      "Traditional"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Best Kinilaw/Ceviche",
+      "Fresh Seafood",
+      "Traditional"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Big Belly",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 450,
+    "description": "Famous for Wagyu beef burgers. Premium burger joint in General Luna with quality ingredients.",
+    "priceLevel": 3,
+    "images": [],
+    "specialty": [
+      "Wagyu Beef Burgers",
+      "Premium Quality",
+      "Burgers"
+    ],
+    "priceRange": "₱300-900 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Wagyu Beef Burgers",
+      "Premium Quality",
+      "Burgers"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Bulan Pizzeria",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 410,
+    "description": "Wood-fired pizzas and pasta in General Luna. Authentic Italian-style cooking with fresh ingredients.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Wood-Fired Pizza",
+      "Pasta",
+      "Italian-Style"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Wood-Fired Pizza",
+      "Pasta",
+      "Italian-Style"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Loka Siargao",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 620,
+    "description": "Beachfront social hub at Cloud 9 with dining from 6am-8pm. Popular gathering spot with ocean views and good food.",
+    "priceLevel": 3,
+    "images": [],
+    "specialty": [
+      "Beachfront",
+      "Cloud 9",
+      "Social Hub",
+      "Ocean Views"
+    ],
+    "priceRange": "₱300-900 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Beachfront",
+      "Cloud 9",
+      "Social Hub",
+      "Ocean Views"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Munchies @ Jacking Horse",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 380,
+    "description": "Traditional Filipino food with beachfront dining. Authentic local dishes in a casual beach setting.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Traditional Filipino",
+      "Beachfront Dining",
+      "Local Dishes"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Traditional Filipino",
+      "Beachfront Dining",
+      "Local Dishes"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Siargao Hawker",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.6,
+    "totalRatings": 340,
+    "description": "Authentic Singaporean food in Siargao. Brings Southeast Asian hawker-style cuisine to the island.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Singaporean Cuisine",
+      "Authentic",
+      "Hawker-Style"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Singaporean Cuisine",
+      "Authentic",
+      "Hawker-Style"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Halika",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.7,
+    "totalRatings": 480,
+    "description": "Artisanal gelato shop featuring unique Filipino flavors like ube cheese and mango float. Perfect dessert spot.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Artisanal Gelato",
+      "Filipino Flavors",
+      "Ube Cheese",
+      "Mango Float"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Artisanal Gelato",
+      "Filipino Flavors",
+      "Ube Cheese",
+      "Mango Float"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Pare's Paresan",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.4,
+    "totalRatings": 290,
+    "description": "Local Filipino pares (braised beef stew) restaurant. Affordable comfort food at ₱189. Authentic local dining experience.",
+    "priceLevel": 1,
+    "images": [],
+    "specialty": [
+      "Filipino Pares",
+      "Braised Beef Stew",
+      "Affordable",
+      "₱189"
+    ],
+    "priceRange": "₱100-300 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Filipino Pares",
+      "Braised Beef Stew",
+      "Affordable",
+      "₱189"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Catangnan BBQ",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "General Luna",
+    "island": "Siargao",
+    "latitude": 9.81,
+    "longitude": 126.11,
+    "rating": 4.5,
+    "totalRatings": 360,
+    "description": "BBQ skewers across from many accommodations in Catangnan. Popular street food spot with grilled meats and local favorites.",
+    "priceLevel": 1,
+    "images": [],
+    "specialty": [
+      "BBQ Skewers",
+      "Street Food",
+      "Affordable",
+      "Local Favorite"
+    ],
+    "priceRange": "₱100-300 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "BBQ Skewers",
+      "Street Food",
+      "Affordable",
+      "Local Favorite"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Bollox Bar and Restaurant",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.5,
+    "totalRatings": 180,
+    "description": "Local favorite at Pacifico Beach. Casual dining with good food and drinks in northern Siargao.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Local Favorite",
+      "Pacifico Beach",
+      "Casual Dining"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Local Favorite",
+      "Pacifico Beach",
+      "Casual Dining"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Jungle Cafe",
+    "cuisine": "Various",
+    "category": "Restaurant",
+    "municipality": "San Isidro",
+    "island": "Siargao",
+    "latitude": 9.95,
+    "longitude": 126.15,
+    "rating": 4.6,
+    "totalRatings": 165,
+    "description": "Refreshing dishes in a jungle setting at Pacifico. Relaxed atmosphere with healthy and fresh menu options.",
+    "priceLevel": 2,
+    "images": [],
+    "specialty": [
+      "Jungle Setting",
+      "Refreshing Dishes",
+      "Relaxed Atmosphere"
+    ],
+    "priceRange": "₱200-600 per person",
+    "openHours": "11:00 AM - 10:00 PM",
+    "tags": [
+      "Jungle Setting",
+      "Refreshing Dishes",
+      "Relaxed Atmosphere"
+    ]
   }
 ]
