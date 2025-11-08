@@ -36,7 +36,13 @@
       "Honeymoon",
       "All-inclusive",
       "Private"
-    ]
+    ],
+    "contact": {
+      "phone": "+63 917 123 4567",
+      "email": "reservations@naypalad.com",
+      "website": "https://www.naypalad.com"
+    },
+    "bookingUrl": "https://www.booking.com/hotel/ph/nay-palad-hideaway.html"
   },
   {
     "id": 2,

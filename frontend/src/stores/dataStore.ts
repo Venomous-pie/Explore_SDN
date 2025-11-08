@@ -1,13 +1,13 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { fetchPlaces, type Place } from '@/services/api'
+import { fetchPlaces, fetchDining, fetchHotels, type Place, type Dining, type Hotel } from '@/services/api'
 import { ProgressiveImageLoader } from '@/services/lazyImageLoader'
 
 export const useDataStore = defineStore('data', () => {
   // State
   const places = ref<Place[]>([])
-  const hotels = ref<any[]>([])
-  const dining = ref<any[]>([])
+  const hotels = ref<Hotel[]>([])
+  const dining = ref<Dining[]>([])
   const loading = ref(false)
   const error = ref<string | null>(null)
   const imagesPreloaded = ref(false)
@@ -67,14 +67,15 @@ export const useDataStore = defineStore('data', () => {
 
     try {
       // Fetch all data in parallel
-      const [placesData] = await Promise.all([
+      const [placesData, diningData, hotelsData] = await Promise.all([
         fetchPlaces(),
-        // Add hotel and dining fetches when endpoints are ready
-        // fetchHotels(),
-        // fetchDining(),
+        fetchDining(),
+        fetchHotels(),
       ])
 
       places.value = placesData
+      dining.value = diningData
+      hotels.value = hotelsData
       
       // Initialize lazy loader and load initial batch
       await initializeLazyLoader()

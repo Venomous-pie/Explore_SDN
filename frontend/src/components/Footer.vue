@@ -7,39 +7,39 @@
           <h3 class="text-lg font-bold mb-4">Quick Links</h3>
           <ul class="space-y-2 list-none">
             <li>
-              <a href="#home" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Home
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#destinations" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/explore" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Destinations
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#hotels" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/hotels" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Hotels & Accommodations
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#dining" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/dining" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Dining
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#activities" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/explore" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Activities
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#about" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/about" class="text-gray-300 hover:text-white transition-colors text-sm">
                 About Us
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#contact" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/contact" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Contact
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -49,29 +49,29 @@
           <h3 class="text-lg font-bold mb-4">Legal</h3>
           <ul class="space-y-2 list-none">
             <li>
-              <a href="#privacy" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/privacy" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Privacy Policy
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#terms" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/terms" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Terms of Service
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#cookies" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/privacy" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Cookie Policy
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#disclaimer" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/terms" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Disclaimer
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#accessibility" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/about" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Accessibility
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -81,29 +81,29 @@
           <h3 class="text-lg font-bold mb-4">Support</h3>
           <ul class="space-y-2 list-none">
             <li>
-              <a href="#faq" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/faq" class="text-gray-300 hover:text-white transition-colors text-sm">
                 FAQ
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#help" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/contact" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Help Center
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#booking" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/faq" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Booking Guide
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#travel-tips" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/faq" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Travel Tips
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="#safety" class="text-gray-300 hover:text-white transition-colors text-sm">
+              <router-link to="/faq" class="text-gray-300 hover:text-white transition-colors text-sm">
                 Safety Guidelines
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>

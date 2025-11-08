@@ -1,21 +1,107 @@
 <template>
     <nav
-        class="bg-white flex items-center justify-between my-3 mx-4 rounded-full px-4 top-0 left-0 right-0 z-50 relative h-10">
+        class="bg-white flex items-center justify-between my-3 mx-4 rounded-full px-4 top-0 left-0 right-0 z-50 relative h-10 shadow-lg">
         <!-- Backdrop overlay when search is expanded -->
         <Transition name="fade">
             <div v-if="expanded" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40" @click="closeSearch"></div>
         </Transition>
 
         <div class="flex items-center gap-2 flex-shrink-0" :class="{ 'opacity-0': expanded }">
-            <div class="i-mdi-bag-personal text-md"></div>
-            <span class="text-md font-diner">Explore - SDN</span>
+            <!-- Hamburger Menu Button with Animation -->
+            <div     
+                @click="toggleMenu" 
+                class="cursor-pointer hover:bg-gray-100 rounded-full p-1.5 transition-all duration-300"
+                aria-label="Menu"
+            >
+                <Transition 
+                    mode="out-in"
+                    enter-active-class="transition-all duration-200 ease-out"
+                    enter-from-class="rotate-90 opacity-0"
+                    enter-to-class="rotate-0 opacity-100"
+                    leave-active-class="transition-all duration-200 ease-in"
+                    leave-from-class="rotate-0 opacity-100"
+                    leave-to-class="-rotate-90 opacity-0"
+                >
+                    <div 
+                        v-if="!menuOpen" 
+                        :key="'menu'"
+                        class="i-mdi-menu text-md text-gray-900"
+                    ></div>
+                    <div 
+                        v-else 
+                        :key="'close'"
+                        class="i-mdi-close text-md text-gray-900"
+                    ></div>
+                </Transition>
+            </div>
+            <router-link to="/" class="text-sm font-diner">Explore - SDN</router-link>
         </div>
+
+        <!-- Dropdown Menu -->
+        <Transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-2"
+            enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
+            leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-2">
+            <div v-if="menuOpen" v-on-click-outside="closeMenu"
+                class="absolute top-14 left-4 bg-white rounded-2xl shadow-2xl py-4 px-2 w-64 z-50">
+                <nav class="flex flex-col">
+                    <router-link to="/explore" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
+                        <div class="i-mdi-compass text-blue-600 text-lg"></div>
+                        <span>Destinations</span>
+                    </router-link>
+
+                    <router-link to="/about" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
+                        <div class="i-mdi-account-group text-purple-600 text-lg"></div>
+                        <span>Culture</span>
+                    </router-link>
+
+                    <router-link to="/faq" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
+                        <div class="i-mdi-map-marker-path text-green-600 text-lg"></div>
+                        <span>Plan Trip</span>
+                    </router-link>
+
+                    <router-link to="/about" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
+                        <div class="i-mdi-post text-orange-600 text-lg"></div>
+                        <span>Blog</span>
+                    </router-link>
+
+                    <router-link to="/contact" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
+                        <div class="i-mdi-email text-red-600 text-lg"></div>
+                        <span>Contact</span>
+                    </router-link>
+
+                    <div class="border-t border-gray-200 my-2"></div>
+
+                    <router-link to="/hotels" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 bg-black text-white hover:bg-gray-800 rounded-xl transition-colors text-xs font-bold no-underline">
+                        <div class="i-mdi-calendar-check text-lg"></div>
+                        <span>Book Now</span>
+                    </router-link>
+                </nav>
+            </div>
+        </Transition>
 
         <ul class="flex items-center gap-4 list-none flex-shrink-0 text-sm font-serif"
             :class="{ 'opacity-0': expanded }">
-            <li>Explore</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li>
+                <router-link to="/explore" class="no-underline text-gray-900 hover:text-gray-600 transition-colors">
+                    Explore
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/about" class="no-underline text-gray-900 hover:text-gray-600 transition-colors">
+                    About
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/contact" class="no-underline text-gray-900 hover:text-gray-600 transition-colors">
+                    Contact
+                </router-link>
+            </li>
         </ul>
 
         <div class="flex items-center gap-2 flex-shrink-0 rounded-full border-none">
@@ -26,10 +112,18 @@
                 <span class="text-sm">Search</span>
             </div>
 
-            <!-- Sign in button -->
-            <div class="bg-black text-white rounded-full text-sm px-3 py-1 cursor-pointer"
+            <!-- Sign in button / User Avatar -->
+            <div v-if="!isAuthenticated" 
+                @click="showAuthModal = true"
+                class="bg-black text-white rounded-full text-sm px-3 py-1 cursor-pointer hover:bg-gray-800 transition-colors"
                 :class="{ 'opacity-0': expanded }">
                 <span>Sign in</span>
+            </div>
+            <div v-else
+                @click="handleSignOut"
+                class="bg-black text-white rounded-full text-sm px-3 py-1 cursor-pointer hover:bg-gray-800 transition-colors"
+                :class="{ 'opacity-0': expanded }">
+                <span>Sign out</span>
             </div>
 
             <!-- Expanded search container -->
@@ -122,6 +216,9 @@
             </Transition>
         </div>
     </nav>
+
+    <!-- Auth Modal -->
+    <AuthModal v-model="showAuthModal" />
 </template>
 
 <script setup lang="ts">
@@ -129,18 +226,23 @@ import { ref, computed, watch, nextTick } from 'vue';
 import { vOnClickOutside } from '@vueuse/components';
 import { useRouter } from 'vue-router';
 import { useDataStore } from '@/stores/dataStore';
+import { useAuth } from '@/composables/useAuth';
+import AuthModal from './AuthModal.vue';
 import type { Place } from '@/services/api';
 import { useDebounceFn } from '@vueuse/core';
 
 const router = useRouter();
 const dataStore = useDataStore();
+const { isAuthenticated, currentUser } = useAuth();
 const expanded = ref(false);
+const menuOpen = ref(false);
 const searchQuery = ref('');
 const debouncedQuery = ref('');
 const searchInput = ref<HTMLInputElement | null>(null);
 const isLoading = ref(false);
 const error = ref('');
 const results = ref<Place[]>([]);
+const showAuthModal = ref(false);
 
 // Only show results panel when expanded and either loading, has results, or has query
 const showResults = computed(() =>
@@ -200,6 +302,19 @@ const clearSearch = () => {
 const navigateToPlace = (id: number) => {
     closeSearch();
     router.push(`/place/${id}`);
+};
+
+const toggleMenu = () => {
+    menuOpen.value = !menuOpen.value;
+};
+
+const closeMenu = () => {
+    menuOpen.value = false;
+};
+
+const handleSignOut = () => {
+    const { signOut } = useAuth();
+    signOut();
 };
 </script>
 

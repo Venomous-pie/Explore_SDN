@@ -100,6 +100,32 @@ export async function getMunicipalities(): Promise<{ municipality: string; count
   return result.data;
 }
 
+export interface Dining {
+  id: number;
+  name: string;
+  cuisine: string;
+  category: string;
+  municipality: string;
+  island: string;
+  latitude: number;
+  longitude: number;
+  rating: number;
+  totalRatings: number;
+  description: string;
+  priceLevel: number;
+  images: string[];
+  specialty?: string[];
+  priceRange?: string;
+  openHours?: string;
+  tags?: string[];
+  contact?: {
+    phone?: string;
+    email?: string;
+    website?: string;
+  };
+  bookingUrl?: string;
+}
+
 // using axios
 export async function fetchPlaces(params?: {
   category?: string;
@@ -110,6 +136,59 @@ export async function fetchPlaces(params?: {
   
   if (!data.success) {
     throw new Error(data.error || 'Failed to fetch places');
+  }
+  
+  return data.data;
+}
+
+export async function fetchDining(params?: {
+  municipality?: string;
+  limit?: number;
+}): Promise<Dining[]> {
+  const { data } = await axios.get<ApiResponse<Dining[]>>(`${API_BASE_URL}/dining`, { params });
+  
+  if (!data.success) {
+    throw new Error(data.error || 'Failed to fetch dining');
+  }
+  
+  return data.data;
+}
+
+export interface Hotel {
+  id: number;
+  name: string;
+  category: string;
+  type: string;
+  municipality: string;
+  island: string;
+  latitude: number;
+  longitude: number;
+  rating: number;
+  totalRatings: number;
+  description: string;
+  priceLevel: number;
+  images: string[];
+  amenities?: string[];
+  priceRange?: string;
+  highlights?: string[];
+  tags?: string[];
+  contact?: {
+    phone?: string;
+    email?: string;
+    website?: string;
+  };
+  bookingUrl?: string;
+}
+
+export async function fetchHotels(params?: {
+  municipality?: string;
+  category?: string;
+  limit?: number;
+}): Promise<Hotel[]> {
+  const { data } = await axios.get<ApiResponse<Hotel[]>>(`${API_BASE_URL}/hotels`, { params });
+  
+  if (!data.success) {
+    throw new Error(data.error || 'Failed to fetch hotels');
   }
   
   return data.data;
