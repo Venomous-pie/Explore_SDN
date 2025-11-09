@@ -36,11 +36,11 @@
     <div class="max-w-7xl mx-auto px-4 py-16">
       <!-- Featured Post -->
       <div v-if="featuredPost" class="mb-16">
-        <div class="flex items-center gap-3 mb-8">
+        <div class="flex items-center gap-3 mb-8" data-aos="fade-right">
           <div class="text-3xl">⭐</div>
           <h2 class="text-3xl font-bold">Featured Story</h2>
         </div>
-        <div @click="$router.push(`/blog/${featuredPost.id}`)" class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+        <div @click="$router.push(`/blog/${featuredPost.id}`)" class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group" data-aos="fade-up">
           <div class="grid grid-cols-1 lg:grid-cols-2">
             <div class="h-96 lg:h-auto bg-cover bg-center group-hover:scale-105 transition-transform duration-500" 
                  :style="`background-image: url('${featuredPost.image}')`">
@@ -76,11 +76,11 @@
 
       <!-- Blog Categories -->
       <div class="mb-12">
-        <div class="flex items-center gap-3 mb-6">
+        <div class="flex items-center gap-3 mb-6" data-aos="fade-right">
           <div class="text-2xl">📂</div>
           <h3 class="text-2xl font-bold">Browse by Category</h3>
         </div>
-        <div class="flex flex-wrap gap-3">
+        <div class="flex flex-wrap gap-3" data-aos="fade-up">
           <button 
             v-for="category in categories" 
             :key="category.id"
@@ -120,10 +120,12 @@
 
       <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <article 
-          v-for="post in displayedPosts" 
+          v-for="(post, index) in displayedPosts" 
           :key="post.id"
           @click="$router.push(`/blog/${post.id}`)"
-          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group">
+          class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer group"
+          data-aos="fade-up"
+          :data-aos-delay="(index % 3) * 100">
           <div class="relative h-48 overflow-hidden">
             <img 
               :src="post.image" 
@@ -164,7 +166,7 @@
       </div>
 
       <!-- Newsletter Signup -->
-      <div class="mt-16 bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white shadow-2xl">
+      <div class="mt-16 bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-2xl p-12 text-center text-white shadow-2xl" data-aos="fade-up">
         <div class="text-5xl mb-4">📧</div>
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Updated with Surigao Stories</h2>
         <p class="text-lg mb-8 max-w-2xl mx-auto text-gray-300">

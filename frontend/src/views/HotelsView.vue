@@ -12,7 +12,7 @@
 
     <!-- Booking Platforms Section -->
     <div class="max-w-7xl mx-auto px-6 py-16">
-      <h2 class="text-4xl font-serif text-gray-900 text-center mb-12">Book Your Stay</h2>
+      <h2 class="text-4xl font-serif text-gray-900 text-center mb-12" data-aos="fade-down">Book Your Stay</h2>
       
       <!-- Booking Platform Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -22,6 +22,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group"
+          data-aos="fade-up"
+          data-aos-delay="0"
         >
           <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <div class="i-mdi-bed text-blue-600 text-4xl"></div>
@@ -40,6 +42,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <div class="i-mdi-home-city text-red-600 text-4xl"></div>
@@ -58,6 +62,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <div class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <div class="i-mdi-home-heart text-pink-600 text-4xl"></div>
@@ -76,6 +82,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group"
+          data-aos="fade-up"
+          data-aos-delay="0"
         >
           <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <div class="i-mdi-office-building text-purple-600 text-4xl"></div>
@@ -94,6 +102,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <div class="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <div class="i-mdi-airplane text-yellow-600 text-4xl"></div>
@@ -112,6 +122,8 @@
           target="_blank"
           rel="noopener noreferrer"
           class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all p-8 text-center group"
+          data-aos="fade-up"
+          data-aos-delay="200"
         >
           <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <div class="i-mdi-owl text-green-600 text-4xl"></div>
@@ -126,7 +138,7 @@
       </div>
 
       <!-- Popular Destinations -->
-      <div class="bg-white rounded-2xl shadow-lg p-8">
+      <div class="bg-white rounded-2xl shadow-lg p-8" data-aos="fade-up">
         <h3 class="text-2xl font-bold text-gray-900 mb-6">Popular Areas to Stay</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="flex items-start gap-3">

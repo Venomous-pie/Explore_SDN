@@ -12,7 +12,7 @@
 
     <!-- Filters Section -->
     <div class="max-w-7xl mx-auto px-6 py-12">
-      <div class="bg-white rounded-2xl shadow-lg p-6 mb-12">
+      <div class="bg-white rounded-2xl shadow-lg p-6 mb-12" data-aos="fade-down">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
           <!-- Municipality Filter -->
           <div>
@@ -88,10 +88,12 @@
       <!-- Places Grid -->
       <div v-if="filteredPlaces.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div
-          v-for="place in filteredPlaces"
+          v-for="(place, index) in filteredPlaces"
           :key="place.id"
           @click="navigateToPlace(place.id)"
           class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer group"
+          data-aos="fade-up"
+          :data-aos-delay="(index % 3) * 100"
         >
           <!-- Image -->
           <div class="relative h-64 overflow-hidden">

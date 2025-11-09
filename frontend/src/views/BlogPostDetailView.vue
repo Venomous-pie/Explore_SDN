@@ -14,7 +14,7 @@
 
         <!-- Content Section -->
         <div v-else-if="blogPost" class="max-w-6xl mx-auto px-4 py-6">
-            <div class="flex flex-col gap-6 mt-12 mb-6">
+            <div class="flex flex-col gap-6 mt-12 mb-6" data-aos="fade-up">
                 <!-- Blog Post Title -->
                 <div>
                     <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{{ blogPost.title }}</h1>
@@ -40,13 +40,13 @@
             </div>
 
             <!-- Full-Width Blog Image -->
-            <div class="mb-6">
+            <div class="mb-6" data-aos="zoom-in">
                 <img :src="blogPost.image" :alt="blogPost.title"
                     class="w-full h-96 object-cover rounded-lg shadow-sm" />
             </div>
 
             <!-- Blog Content -->
-            <div class="bg-white rounded-lg p-6 shadow-sm mb-6 border border-gray-200">
+            <div class="bg-white rounded-lg p-6 shadow-sm mb-6 border border-gray-200" data-aos="fade-up">
                 <div class="prose prose-sm max-w-none">
                     <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
                         {{ blogContent }}
@@ -63,7 +63,7 @@
             </div>
 
             <!-- Review Section -->
-            <div class="flex flex-col bg-white rounded-lg p-4 shadow-sm mb-4 border border-gray-200">
+            <div class="flex flex-col bg-white rounded-lg p-4 shadow-sm mb-4 border border-gray-200" data-aos="fade-up">
                 <div class="flex justify-between items-center mb-4">
                     <div>
                         <h2 class="text-lg font-bold text-gray-900 mb-1">Leave a comment</h2>
@@ -161,7 +161,7 @@
             </div>
 
             <!-- Review List + Filter -->
-            <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
+            <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200" data-aos="fade-up">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-2">
                         <h2 class="text-base font-bold text-gray-900">Comments</h2>

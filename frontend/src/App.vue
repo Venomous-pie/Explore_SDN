@@ -7,6 +7,8 @@ import { onMounted, ref, watch } from 'vue'
 import { useDataStore } from '@/stores/dataStore'
 import { useFontLoader } from '@/composables/useFontLoader'
 import { useRoute } from 'vue-router'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const dataStore = useDataStore()
 const { loadFonts, fontsLoaded } = useFontLoader()
@@ -35,6 +37,14 @@ watch(() => route.path, () => {
 
 onMounted(async () => {
   try {
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false,
+      offset: 100,
+    })
+
     // Load data and fonts in parallel with 10 second timeout for fonts
     await Promise.allSettled([
       dataStore.fetchAllData().then(() => {
@@ -50,6 +60,13 @@ onMounted(async () => {
     // Still mark as loaded to prevent infinite loading
     dataLoaded.value = true
   }
+})
+
+// Refresh AOS on route change
+watch(() => route.path, () => {
+  setTimeout(() => {
+    AOS.refresh()
+  }, 100)
 })
 </script>
 

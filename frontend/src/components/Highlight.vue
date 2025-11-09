@@ -1,15 +1,15 @@
 <template>
     <div class="p-16">
         <div class="flex justify-between">
-            <div>
+            <div data-aos="fade-right" data-aos-duration="600">
                 <span class="text-sm">Explore SDN</span>
             </div>
             <div class="max-w-lg">
-                <span class="text-6xl font-serif">The unmatched beauty of </span>
+                <span class="text-6xl font-serif" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100">The unmatched beauty of </span>
                 <br>
-                <span class="text-6xl font-serif">Surigao del Norte</span>
+                <span class="text-6xl font-serif" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">Surigao del Norte</span>
             </div>
-            <div class="max-w-lg">
+            <div class="max-w-lg" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                 <span class="text-xs">
                     Surigao del Norte is a province in the Caraga region of Mindanao, Philippines, known for its
                     stunning
@@ -33,7 +33,8 @@
         <div class="flex gap-2 mt-16 items-end">
             <div class="flex gap-2 h-full w-full items-end">
                 <!-- Featured Image -->
-                <div class="h-130 bg-gray-200 rounded-2xl w-full overflow-hidden relative group shadow-2xl border-4 border-white">
+                <div class="h-130 bg-gray-200 rounded-2xl w-full overflow-hidden relative group shadow-2xl border-4 border-white"
+                     data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
                     <img
                         v-if="currentFeaturedPlace"
                         :src="getImageSrc(currentFeaturedPlace.images?.[0])"
@@ -54,19 +55,20 @@
                 </div>
                 
                 <!-- Statistics Card -->
-                <div class="h-115 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300">
+                <div class="h-115 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300"
+                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
                     <div>
                         <h4 class="text-xl font-bold mb-4">Discover</h4>
                         <div class="space-y-4">
-                            <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-between" data-aos="fade-left" data-aos-duration="600" data-aos-delay="700">
                                 <span class="text-gray-600">Total Places</span>
                                 <span class="text-3xl font-bold text-black">{{ dataStore.places.length }}</span>
                             </div>
-                            <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-between" data-aos="fade-left" data-aos-duration="600" data-aos-delay="800">
                                 <span class="text-gray-600">Municipalities</span>
                                 <span class="text-3xl font-bold text-black">{{ municipalityCount }}</span>
                             </div>
-                            <div class="flex items-center justify-between">
+                            <div class="flex items-center justify-between" data-aos="fade-left" data-aos-duration="600" data-aos-delay="900">
                                 <span class="text-gray-600">Categories</span>
                                 <span class="text-3xl font-bold text-black">{{ categoryCount }}</span>
                             </div>
@@ -80,7 +82,8 @@
             
             <div class="flex gap-2 h-full w-full items-end">
                 <!-- Reviews and Rating -->
-                <div class="h-95 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white hover:shadow-3xl transition-shadow duration-300">
+                <div class="h-95 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white hover:shadow-3xl transition-shadow duration-300"
+                     data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600">
                     <h4 class="text-xl font-bold mb-4">Top Rated</h4>
                     <div class="space-y-3">
                         <div 
@@ -103,11 +106,12 @@
                 </div>
                 
                 <!-- Highlights -->
-                <div class="h-115 bg-black text-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300">
+                <div class="h-115 bg-black text-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300"
+                     data-aos="flip-right" data-aos-duration="1000" data-aos-delay="700">
                     <div>
                         <h4 class="text-xl font-bold mb-4">Highlights</h4>
                         <div class="space-y-3">
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-start gap-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="900">
                                 <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                 </svg>
@@ -116,7 +120,7 @@
                                     <p class="text-xs text-gray-300">Cloud 9 & Siargao Island</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-start gap-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="1000">
                                 <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                 </svg>
@@ -125,7 +129,7 @@
                                     <p class="text-xs text-gray-300">Sohoton Cove & Rock Pools</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-start gap-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="1100">
                                 <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                 </svg>
@@ -134,7 +138,7 @@
                                     <p class="text-xs text-gray-300">Naked, Daku & Guyam Islands</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-3">
+                            <div class="flex items-start gap-3" data-aos="fade-right" data-aos-duration="600" data-aos-delay="1200">
                                 <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                 </svg>

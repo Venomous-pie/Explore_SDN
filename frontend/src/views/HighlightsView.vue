@@ -15,7 +15,7 @@
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 py-16">
       <!-- Filter Tabs -->
-      <div class="flex items-center justify-center gap-4 mb-12">
+      <div class="flex items-center justify-center gap-4 mb-12" data-aos="fade-up">
         <button 
           v-for="filter in filters" 
           :key="filter.id"
@@ -32,16 +32,18 @@
 
       <!-- Videos Section -->
       <div v-if="selectedFilter === 'all' || selectedFilter === 'videos'" class="mb-16">
-        <div class="flex items-center gap-3 mb-8">
+        <div class="flex items-center gap-3 mb-8" data-aos="fade-right">
           <div class="text-3xl">🎥</div>
           <h2 class="text-3xl font-bold text-gray-900">Featured Videos</h2>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div 
-            v-for="video in videos" 
+            v-for="(video, index) in videos" 
             :key="video.id"
-            class="group cursor-pointer">
+            class="group cursor-pointer"
+            data-aos="fade-up"
+            :data-aos-delay="index * 100">
             <div class="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
               <div class="aspect-video bg-gray-900 relative">
                 <iframe 
@@ -70,7 +72,7 @@
 
       <!-- Photos Section -->
       <div v-if="selectedFilter === 'all' || selectedFilter === 'photos'">
-        <div class="flex items-center gap-3 mb-8">
+        <div class="flex items-center gap-3 mb-8" data-aos="fade-right">
           <div class="text-3xl">📸</div>
           <h2 class="text-3xl font-bold text-gray-900">Photo Gallery</h2>
         </div>
@@ -78,10 +80,12 @@
         <!-- Masonry Grid -->
         <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           <div 
-            v-for="photo in photos" 
+            v-for="(photo, index) in photos" 
             :key="photo.id"
             @click="openLightbox(photo)"
-            class="break-inside-avoid cursor-pointer group">
+            class="break-inside-avoid cursor-pointer group"
+            data-aos="zoom-in"
+            :data-aos-delay="(index % 6) * 50">
             <div class="relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
               <img 
                 :src="photo.url" 
@@ -123,7 +127,7 @@
       </Teleport>
 
       <!-- Call to Action -->
-      <div class="mt-16 bg-black rounded-2xl p-12 text-center text-white shadow-2xl">
+      <div class="mt-16 bg-black rounded-2xl p-12 text-center text-white shadow-2xl" data-aos="fade-up">
         <div class="text-5xl mb-4">📷</div>
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Share Your Moments</h2>
         <p class="text-lg mb-8 max-w-2xl mx-auto text-gray-300">
