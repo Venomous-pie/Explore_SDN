@@ -1,7 +1,7 @@
-# Surigao Escapes - Start Script
+# Explore SDN - Start Script
 # Runs both backend and frontend servers concurrently
 
-Write-Host "🚀 Starting Surigao Escapes..." -ForegroundColor Cyan
+Write-Host "🚀 Starting Explore SDN..." -ForegroundColor Cyan
 Write-Host ""
 
 # Check if Node.js is installed

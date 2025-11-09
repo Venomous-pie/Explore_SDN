@@ -13,7 +13,11 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix --cache",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "test:e2e": "cypress run",
+    "test:e2e:dev": "cypress open"
   },
   "dependencies": {
     "@vueuse/components": "^14.0.0",
@@ -40,6 +44,7 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.8.1",
+    "cypress": "^15.6.0",
     "eslint": "^9.37.0",
     "eslint-plugin-vue": "~10.5.0",
     "jiti": "^2.6.1",

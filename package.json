@@ -1,7 +1,7 @@
 {
   "name": "surigao-escapes",
   "version": "1.0.0",
-  "description": "Surigao Escapes - Tourism Web Application",
+  "description": "Explore SDN - Tourism Web Application",
   "private": true,
   "scripts": {
     "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,magenta\" \"npm run dev:backend\" \"npm run dev:frontend\"",

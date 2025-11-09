@@ -11,6 +11,14 @@ export default defineConfig({
         serif: 'Noto Serif',
         diner: 'Permanent Marker',
       },
+      // Add timeout and better error handling
+      timeouts: {
+        warning: 3000, // 3 seconds warning
+        failure: 8000, // 8 seconds before giving up
+      },
+      // Provide fallback fonts
+      provider: 'google',
+      inlineImports: false,
     }),
     presetIcons({
       scale: 1.2,
@@ -20,5 +28,12 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
+  ],
+  // Add safelist to ensure critical utilities are always available
+  safelist: [
+    'font-sans',
+    'font-mono',
+    'font-serif',
+    'font-diner',
   ],
 })

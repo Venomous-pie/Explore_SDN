@@ -33,7 +33,7 @@
         <div class="flex gap-2 mt-16 items-end">
             <div class="flex gap-2 h-full w-full items-end">
                 <!-- Featured Image -->
-                <div class="h-150 bg-gray-200 rounded-2xl w-full overflow-hidden relative group shadow-2xl border-4 border-white">
+                <div class="h-130 bg-gray-200 rounded-2xl w-full overflow-hidden relative group shadow-2xl border-4 border-white">
                     <img
                         v-if="currentFeaturedPlace"
                         :src="getImageSrc(currentFeaturedPlace.images?.[0])"
@@ -54,7 +54,7 @@
                 </div>
                 
                 <!-- Statistics Card -->
-                <div class="h-140 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300">
+                <div class="h-115 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300">
                     <div>
                         <h4 class="text-xl font-bold mb-4">Discover</h4>
                         <div class="space-y-4">
@@ -80,7 +80,7 @@
             
             <div class="flex gap-2 h-full w-full items-end">
                 <!-- Reviews and Rating -->
-                <div class="h-120 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white hover:shadow-3xl transition-shadow duration-300">
+                <div class="h-95 bg-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white hover:shadow-3xl transition-shadow duration-300">
                     <h4 class="text-xl font-bold mb-4">Top Rated</h4>
                     <div class="space-y-3">
                         <div 
@@ -103,7 +103,7 @@
                 </div>
                 
                 <!-- Highlights -->
-                <div class="h-140 bg-black text-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300">
+                <div class="h-115 bg-black text-white rounded-2xl w-full p-6 shadow-2xl border-4 border-white flex flex-col justify-between hover:shadow-3xl transition-shadow duration-300">
                     <div>
                         <h4 class="text-xl font-bold mb-4">Highlights</h4>
                         <div class="space-y-3">

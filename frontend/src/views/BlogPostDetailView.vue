@@ -8,121 +8,57 @@
         <div v-if="loading" class="flex items-center justify-center min-h-screen">
             <div class="text-center">
                 <div class="i-mdi-loading animate-spin text-4xl mb-3 text-gray-400"></div>
-                <p class="text-sm text-gray-600">Loading place details...</p>
+                <p class="text-sm text-gray-600">Loading blog post...</p>
             </div>
         </div>
 
         <!-- Content Section -->
-        <div v-else-if="place" class="max-w-6xl mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row gap-6 mt-12 mb-6">
-                <div class="flex-1">
-                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ place.name }}</h1>
-                    <div class="flex items-center gap-2">
-                        <!-- Stacked Profile Pictures -->
-                        <div class="flex -space-x-2">
-                            <img src="https://i.pravatar.cc/150?img=1" alt="Reviewer 1"
-                                class="w-5 h-5 rounded-full border-2 border-white object-cover" />
-                            <img src="https://i.pravatar.cc/150?img=2" alt="Reviewer 2"
-                                class="w-5 h-5 rounded-full border-2 border-white object-cover" />
-                            <img src="https://i.pravatar.cc/150?img=3" alt="Reviewer 3"
-                                class="w-5 h-5 rounded-full border-2 border-white object-cover" />
+        <div v-else-if="blogPost" class="max-w-6xl mx-auto px-4 py-6">
+            <div class="flex flex-col gap-6 mt-12 mb-6">
+                <!-- Blog Post Title -->
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">{{ blogPost.title }}</h1>
+                    
+                    <!-- Author Info -->
+                    <div class="flex items-center gap-4">
+                        <img :src="getAuthorAvatar(blogPost.author)" :alt="blogPost.author"
+                            class="w-12 h-12 rounded-full object-cover border-2 border-gray-200" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-semibold text-sm text-gray-900">{{ blogPost.author }}</span>
+                                <span class="text-xs font-bold uppercase tracking-wide text-gray-900">
+                                    {{ blogPost.category }}
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-3 text-xs text-gray-600">
+                                <span>📅 {{ blogPost.date }}</span>
+                                <span>⏱️ {{ blogPost.readTime }}</span>
+                            </div>
                         </div>
-                        <div class="i-mdi-star w-4 h-4 text-yellow-500"></div>
-                        <span class="text-xs font-semibold text-gray-900">{{ place.rating }}</span>
-                        <span class="text-xs text-gray-500">({{ place.totalRatings }} reviews)</span>
                     </div>
                 </div>
-                <div class="flex-1 mt-3">
-                    <p class="text-xs text-gray-600 leading-relaxed">{{ place.description }}</p>
+            </div>
+
+            <!-- Full-Width Blog Image -->
+            <div class="mb-6">
+                <img :src="blogPost.image" :alt="blogPost.title"
+                    class="w-full h-96 object-cover rounded-lg shadow-sm" />
+            </div>
+
+            <!-- Blog Content -->
+            <div class="bg-white rounded-lg p-6 shadow-sm mb-6 border border-gray-200">
+                <div class="prose prose-sm max-w-none">
+                    <p class="text-sm text-gray-700 leading-relaxed whitespace-pre-line">
+                        {{ blogContent }}
+                    </p>
                 </div>
-            </div>
-
-            <!-- Full-Width Place Image -->
-            <div class="mb-4">
-                <img :src="getImageSrc(place.images[0])" :alt="place.name"
-                    class="w-full h-72 object-cover rounded-lg shadow-sm" />
-            </div>
-
-            <!-- Wikipedia Information Section -->
-            <div class="bg-white rounded-lg p-4 shadow-sm mb-4 border border-gray-200">
-                <p class="text-xs text-gray-700 leading-relaxed mb-2">
-                    {{ wikipediaInfo }}
-                </p>
-                <p class="text-xs text-gray-500 italic">- Wikipedia</p>
-            </div>
-
-            <!-- Nearby Dining Section -->
-            <div class="bg-white rounded-lg p-4 shadow-sm mb-4 border border-gray-200">
-                <h2 class="text-base font-bold text-gray-900 mb-3">Dining near here</h2>
-
-                <!-- Horizontal Scroll Container -->
-                <div v-if="nearbyDining.length > 0" class="overflow-x-auto scrollbar-hover">
-                    <div class="flex gap-3 pb-2">
-                        <a v-for="restaurant in nearbyDining" :key="restaurant.id"
-                            :href="restaurant.contact?.website || restaurant.bookingUrl || getGoogleSearchUrl(restaurant.name, restaurant.municipality)" target="_blank"
-                            class="flex-shrink-0 w-56 bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow border border-gray-200 cursor-pointer">
-                            <img :src="getImageSrc(restaurant.images[0])" :alt="restaurant.name"
-                                class="w-full h-32 object-cover" />
-                            <div class="p-3">
-                                <h3 class="font-semibold text-xs text-gray-900 mb-1 line-clamp-1">{{ restaurant.name }}
-                                </h3>
-                                <p class="text-xs text-gray-600 mb-2 line-clamp-1" >{{ restaurant.cuisine }}</p>
-                                <div class="flex items-center justify-between mb-2">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                        </svg>
-                                        <span class="text-xs font-semibold">{{ restaurant.rating }}</span>
-                                    </div>
-                                    <span class="text-xs text-gray-500">{{ restaurant.priceRange }}</span>
-                                </div>
-                                <div class="text-center bg-black text-white text-xs font-medium py-2 px-3 rounded-md hover:bg-gray-800 transition-colors">
-                                    {{ restaurant.contact?.website || restaurant.bookingUrl ? 'Visit Website' : 'Search on Google' }}
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>  
-                <div v-else class="text-center py-6 text-gray-500">
-                    <p class="text-xs">No dining options found in this area</p>
-                </div>
-            </div>
-
-            <!-- Places to Stay Section -->
-            <div class="bg-white rounded-lg p-4 shadow-sm mb-4 border border-gray-200">
-                <h2 class="text-base font-bold text-gray-900 mb-3">Places to stay near this place</h2>
-
-                <!-- Horizontal Scroll Container -->
-                <div v-if="nearbyHotels.length > 0" class="overflow-x-auto scrollbar-hover">
-                    <div class="flex gap-3 pb-2">
-                        <a v-for="hotel in nearbyHotels" :key="hotel.id"
-                            :href="hotel.bookingUrl || hotel.contact?.website || getGoogleSearchUrl(hotel.name, hotel.municipality)" target="_blank"
-                            class="flex-shrink-0 w-56 bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow border border-gray-200 cursor-pointer">
-                            <img :src="getImageSrc(hotel.images[0])" :alt="hotel.name"
-                                class="w-full h-32 object-cover" />
-                            <div class="p-3">
-                                <h3 class="font-semibold text-xs text-gray-900 mb-1 line-clamp-1">{{ hotel.name }}</h3>
-                                <p class="text-xs text-gray-600 mb-2">{{ hotel.type }}</p>
-                                <div class="flex items-center justify-between mb-2">
-                                    <div class="flex items-center gap-1">
-                                        <svg class="w-3 h-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                        </svg>
-                                        <span class="text-xs font-semibold">{{ hotel.rating }}</span>
-                                    </div>
-                                    <span class="text-xs text-gray-500">{{ hotel.priceRange }}</span>
-                                </div>
-                                <div class="text-center bg-black text-white text-xs font-medium py-2 px-3 rounded-md hover:bg-gray-800 transition-colors">
-                                    {{ hotel.bookingUrl || hotel.contact?.website ? 'Check Availability' : 'Search on Google' }}
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div v-else class="text-center py-6 text-gray-500">
-                    <p class="text-xs">No accommodations found in this area</p>
+                
+                <!-- Tags -->
+                <div class="flex flex-wrap gap-2 mt-6 pt-6 border-t border-gray-200">
+                    <span v-for="tag in blogPost.tags" :key="tag" 
+                          class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium hover:bg-gray-200 transition-colors">
+                        #{{ tag }}
+                    </span>
                 </div>
             </div>
 
@@ -130,8 +66,8 @@
             <div class="flex flex-col bg-white rounded-lg p-4 shadow-sm mb-4 border border-gray-200">
                 <div class="flex justify-between items-center mb-4">
                     <div>
-                        <h2 class="text-lg font-bold text-gray-900 mb-1">Leave a review</h2>
-                        <p class="text-xs text-gray-600">Enjoy the place?</p>
+                        <h2 class="text-lg font-bold text-gray-900 mb-1">Leave a comment</h2>
+                        <p class="text-xs text-gray-600">Share your thoughts and experiences with this place</p>
                     </div>
 
                     <!-- Success Message -->
@@ -157,26 +93,6 @@
                             </svg>
                             {{ validationError }}
                         </p>
-                    </div>
-                    <!-- Star Rating Selector -->
-                    <div class="flex items-center gap-4">
-                        <p v-if="selectedRating > 0" class="text-xs text-gray-600 mt-2">
-                            {{ selectedRating === 5 ? 'Excellent!' : selectedRating === 4 ? 'Great!' : selectedRating
-                                === 3
-                                ? 'Good' : selectedRating === 2 ? 'Fair' : 'Poor' }}
-                        </p>
-                        <div class="flex gap-1">
-                            <div v-for="star in 5" :key="star" type="button" @click="selectedRating = star"
-                                @mouseenter="hoveredRating = star" @mouseleave="hoveredRating = 0"
-                                class="transition-transform hover:scale-110 focus:outline-none">
-                                <svg class="w-8 h-8 transition-colors"
-                                    :class="star <= (hoveredRating || selectedRating) ? 'text-yellow-500' : 'text-gray-300'"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -239,7 +155,7 @@
                         Posting...
                     </span>
                     <span v-else>
-                        {{ isAuthenticated ? 'Post Review' : 'Sign in to Post Review' }}
+                        {{ isAuthenticated ? 'Post' : 'Sign in to Post' }}
                     </span>
                 </button>
             </div>
@@ -248,8 +164,7 @@
             <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-2">
-                        <h2 class="text-base font-bold text-gray-900">Reviews</h2>
-                        <span class="text-xs text-gray-500">({{ mockReviews.length }})</span>
+                        <h2 class="text-base font-bold text-gray-900">Comments</h2>
                     </div>
 
                     <!-- Filter Menu -->
@@ -275,17 +190,6 @@
                                 <h4 class="font-semibold text-xs text-gray-900">{{ review.name }}</h4>
                                 <span class="text-xs text-gray-500">{{ review.timestamp }}</span>
                             </div>
-
-                            <!-- Star Rating -->
-                            <div class="flex gap-0.5 mb-1">
-                                <svg v-for="star in 5" :key="star" class="w-3 h-3"
-                                    :class="star <= review.rating ? 'text-yellow-500' : 'text-gray-300'"
-                                    fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                </svg>
-                            </div>
-
                             <p class="text-xs text-gray-700 line-clamp-2">{{ review.comment }}</p>
                         </div>
                     </div>
@@ -295,12 +199,12 @@
 
         <!-- Not Found State -->
         <div v-else class="max-w-4xl mx-auto px-4 py-20 text-center">
-            <div class="i-mdi-map-search text-gray-300 text-6xl mb-4"></div>
-            <h1 class="text-2xl font-bold text-gray-900 mb-3">Place Not Found</h1>
-            <p class="text-sm text-gray-600 mb-6">The place you're looking for doesn't exist or has been removed.</p>
-            <router-link to="/"
+            <div class="text-6xl mb-4">📝</div>
+            <h1 class="text-2xl font-bold text-gray-900 mb-3">Blog Post Not Found</h1>
+            <p class="text-sm text-gray-600 mb-6">The blog post you're looking for doesn't exist or has been removed.</p>
+            <router-link to="/blog"
                 class="inline-block bg-black text-white font-medium text-xs py-3 px-6 rounded-md hover:bg-gray-800 transition-colors">
-                Back to Home
+                Back to Blog
             </router-link>
         </div>
     </div>
@@ -314,6 +218,22 @@ import { useDataStore } from '@/stores/dataStore'
 import { useImages } from '@/composables/useImages'
 import { useAuth } from '@/composables/useAuth'
 import AuthModal from '@/components/AuthModal.vue'
+
+// Blog Post Interface
+interface BlogPost {
+  id: number
+  title: string
+  excerpt: string
+  category: string
+  categoryColor: string
+  image: string
+  date: string
+  readTime: string
+  author: string
+  tags: string[]
+  content?: string
+  featured?: boolean
+}
 
 const route = useRoute()
 const dataStore = useDataStore()
@@ -334,42 +254,152 @@ const maxCharacters = 500
 // Auth modal state
 const showAuthModal = ref(false)
 
-const placeId = computed(() => Number(route.params.id))
+// Blog posts data (same as BlogView.vue)
+const blogPosts = ref<BlogPost[]>([
+  {
+    id: 1,
+    title: 'Sohoton Cove: A Journey Through Enchanted Waters',
+    excerpt: 'Explore the mystical beauty of Sohoton Cove National Park, where emerald lagoons, ancient caves, and bioluminescent waters create an otherworldly experience.',
+    category: 'Travel Guide',
+    categoryColor: 'blue',
+    image: 'https://www.journeyera.com/wp-content/uploads/2018/01/sohoton-cove-national-park-socorro-01707.jpg',
+    date: 'November 8, 2025',
+    readTime: '8 min read',
+    author: 'Maria Santos',
+    tags: ['Sohoton Cove', 'Nature', 'Adventure'],
+    featured: true
+  },
+  {
+    id: 2,
+    title: 'Cloud 9: The Legendary Surf Break of Siargao',
+    excerpt: 'Dive into the world-famous surf scene at Cloud 9. Whether you\'re a seasoned surfer or a curious beginner, learn everything about riding the perfect wave.',
+    category: 'Adventure',
+    categoryColor: 'orange',
+    image: 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=800',
+    date: 'November 6, 2025',
+    readTime: '10 min read',
+    author: 'Jake Rodriguez',
+    tags: ['Siargao', 'Surfing', 'Cloud 9']
+  },
+  {
+    id: 3,
+    title: 'Island Hopping Guide: Three Islands Tour in Siargao',
+    excerpt: 'Experience the ultimate island hopping adventure visiting Naked Island, Daku Island, and Guyam Island.',
+    category: 'Travel Guide',
+    categoryColor: 'blue',
+    image: 'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/04/0b/e7.jpg',
+    date: 'November 5, 2025',
+    readTime: '12 min read',
+    author: 'Maria Santos',
+    tags: ['Island Hopping', 'Siargao', 'Beaches']
+  },
+  {
+    id: 4,
+    title: 'Magpupungko Rock Pools: Nature\'s Infinity Pools',
+    excerpt: 'Discover the perfect timing and best practices for visiting Magpupungko Rock Pools.',
+    category: 'Travel Guide',
+    categoryColor: 'blue',
+    image: 'https://i0.wp.com/backpackingwithabook.com/wp-content/uploads/2022/02/Magpupungko-Pools-Pilar-Siargao.png?w=940&ssl=1',
+    date: 'November 3, 2025',
+    readTime: '6 min read',
+    author: 'Carlos Mendoza',
+    tags: ['Magpupungko', 'Natural Pools', 'Photography']
+  },
+  {
+    id: 5,
+    title: 'Authentic Surigaonon Cuisine: A Food Lover\'s Journey',
+    excerpt: 'From fresh seafood to traditional Filipino dishes with a local twist, explore the rich culinary heritage of Surigao del Norte.',
+    category: 'Food & Dining',
+    categoryColor: 'red',
+    image: 'https://cdn.prod.website-files.com/66ae64945e072e8cb3d0c8e6/683fa2283bf970eb359a3eb2_sfood.webp',
+    date: 'November 1, 2025',
+    readTime: '9 min read',
+    author: 'Chef Elena Cruz',
+    tags: ['Food', 'Cuisine', 'Restaurants']
+  },
+  {
+    id: 6,
+    title: 'Sugba Lagoon: Kayaking Through Paradise',
+    excerpt: 'Paddle through the crystal-clear waters of Sugba Lagoon, surrounded by towering limestone cliffs and lush mangroves.',
+    category: 'Adventure',
+    categoryColor: 'orange',
+    image: 'https://www.thecoastalcampaign.com/wp-content/uploads/2019/12/DJI_0167-1024x682.jpg',
+    date: 'October 28, 2025',
+    readTime: '7 min read',
+    author: 'Jake Rodriguez',
+    tags: ['Sugba Lagoon', 'Kayaking', 'Nature']
+  },
+  {
+    id: 7,
+    title: 'Tinuy-an Falls: The Niagara of the Philippines',
+    excerpt: 'Visit the majestic three-tiered Tinuy-an Falls, one of the most beautiful waterfalls in the Philippines.',
+    category: 'Travel Guide',
+    categoryColor: 'blue',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/12/71/df/the-beauty-of-tinuy-an.jpg?w=900&h=500&s=1',
+    date: 'October 25, 2025',
+    readTime: '8 min read',
+    author: 'Maria Santos',
+    tags: ['Tinuy-an Falls', 'Waterfalls', 'Nature']
+  },
+  {
+    id: 8,
+    title: 'Sustainable Tourism in Surigao: Travel Responsibly',
+    excerpt: 'Learn how to minimize your environmental impact while exploring Surigao del Norte.',
+    category: 'Local Culture',
+    categoryColor: 'green',
+    image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhoKvRpkflBLu9mWMucvZJ4XtzF6NUlzptQjwLll176MxUkd9yDcSGRut7rNHRNfKV9VZV2INaFoCM2uMUT6u6jWBVJCnySe8R6Oh7fGEMyLF0IBBvDbSFxPPQEwDt8dh9b0oef62wrLK6JrAB4YkWt4sd3xIe5X1-7ltdpzAoPmBqasGO6UMzRs23d7CE/s960/Siargao%20Featured%20Photo%20%E2%80%94%20Sustainable%20Siargao.png',
+    date: 'October 22, 2025',
+    readTime: '7 min read',
+    author: 'Maria Santos',
+    tags: ['Sustainability', 'Eco-Tourism', 'Conservation']
+  },
+  {
+    id: 9,
+    title: 'Best Budget Accommodations in Siargao',
+    excerpt: 'Traveling on a budget? Discover affordable hostels, guesthouses, and homestays that offer great value.',
+    category: 'Travel Guide',
+    categoryColor: 'blue',
+    image: 'https://cf.bstatic.com/static/img/theme-index/bg_budget/1f0cae2bfb9297cd985477db58019139683b1aa5.jpg',
+    date: 'October 18, 2025',
+    readTime: '8 min read',
+    author: 'Carlos Mendoza',
+    tags: ['Budget Travel', 'Accommodations', 'Hotels']
+  }
+])
 
-const place = computed(() => {
-    return dataStore.places.find(p => p.id === placeId.value)
+const blogPostId = computed(() => Number(route.params.id))
+
+const blogPost = computed(() => {
+    return blogPosts.value.find(p => p.id === blogPostId.value)
 })
 
-// Wikipedia info - uses actual place data
-const wikipediaInfo = computed(() => {
-    if (!place.value) return ''
-
-    // Use the actual description from the backend
-    let info = place.value.description
-
-    // Add location context
-    info += ` Located in ${place.value.municipality}, ${place.value.island}, this ${place.value.category.toLowerCase()} destination`
-
-    // Add rating context if highly rated
-    if (place.value.rating >= 4.5) {
-        info += ` has earned an impressive ${place.value.rating} rating from ${place.value.totalRatings} visitors`
-    } else {
-        info += ` has been reviewed by ${place.value.totalRatings} visitors`
+// Helper methods
+const getAuthorAvatar = (authorName: string): string => {
+    const avatarMap: Record<string, string> = {
+        'Maria Santos': 'https://i.pravatar.cc/150?img=5',
+        'Jake Rodriguez': 'https://i.pravatar.cc/150?img=12',
+        'Carlos Mendoza': 'https://i.pravatar.cc/150?img=33',
+        'Chef Elena Cruz': 'https://i.pravatar.cc/150?img=47'
     }
+    return avatarMap[authorName] || 'https://i.pravatar.cc/150?img=1'
+}
 
-    // Add best time to visit if available
-    if (place.value.bestTimeToVisit) {
-        info += `. Best time to visit: ${place.value.bestTimeToVisit}`
+const getCategoryColorClass = (color: string) => {
+    const colors: Record<string, string> = {
+        blue: 'text-blue-600',
+        orange: 'text-orange-600',
+        green: 'text-green-600',
+        red: 'text-red-600'
     }
+    return colors[color] || 'text-gray-600'
+}
 
-    // Add entry fee info if available
-    if (place.value.entryFee && place.value.entryFee !== 'Varies') {
-        info += `. Entry fee: ${place.value.entryFee}`
-    }
-
-    info += '.'
-
-    return info
+// Blog content - full article text
+const blogContent = computed(() => {
+    if (!blogPost.value) return ''
+    
+    // Generate rich content based on the blog post
+    return `${blogPost.value.excerpt}\n\nThis is where the full blog post content would appear. The article would include detailed information, personal experiences, practical tips, and beautiful descriptions of the destination.\n\nStay tuned for the complete article!`
 })
 
 // Review interface
@@ -385,7 +415,7 @@ interface Review {
 
 // Load reviews from localStorage or use default reviews
 const loadReviews = (): Review[] => {
-    const storageKey = `reviews_place_${placeId.value}`
+    const storageKey = `reviews_blog_${blogPostId.value}`
     const stored = localStorage.getItem(storageKey)
 
     if (stored) {
@@ -454,24 +484,6 @@ const loadReviews = (): Review[] => {
 // Initialize reviews
 const mockReviews = ref<Review[]>(loadReviews())
 
-// Nearby dining - fetch from data store
-const nearbyDining = computed(() => {
-    if (!place.value) return []
-    // Get dining options from the same municipality
-    return dataStore.dining
-        .filter(d => d.municipality === place.value!.municipality)
-        .slice(0, 6)
-})
-
-// Nearby hotels - fetch from data store
-const nearbyHotels = computed(() => {
-    if (!place.value) return []
-    // Get hotels from the same municipality
-    return dataStore.hotels
-        .filter(h => h.municipality === place.value!.municipality)
-        .slice(0, 6)
-})
-
 // Filtered reviews based on selected filter
 const filteredReviews = computed(() => {
     const reviews = [...mockReviews.value]
@@ -496,7 +508,7 @@ const isOverLimit = computed(() => characterCount.value > maxCharacters)
 
 // Save reviews to localStorage
 const saveReviews = () => {
-    const storageKey = `reviews_place_${placeId.value}`
+    const storageKey = `reviews_blog_${blogPostId.value}`
     localStorage.setItem(storageKey, JSON.stringify(mockReviews.value))
 }
 
@@ -524,11 +536,6 @@ const getRandomAvatar = (): string => {
 }
 
 // Methods
-
-const getGoogleSearchUrl = (name: string, municipality: string): string => {
-    const searchQuery = `${name} ${municipality} Surigao del Norte Philippines`
-    return `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`
-}
 
 const addEmoji = (emoji: string) => {
     reviewText.value += emoji
@@ -627,8 +634,8 @@ onMounted(async () => {
 
     loading.value = false
 
-    if (!place.value) {
-        console.warn(`Place with ID ${placeId.value} not found`)
+    if (!blogPost.value) {
+        console.warn(`Blog post with ID ${blogPostId.value} not found`)
     }
 
     // Update timestamps periodically

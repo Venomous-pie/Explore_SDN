@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
 import { Motion } from 'motion-v'
+import { useRouter } from 'vue-router'
 import { useDataStore } from '@/stores/dataStore'
 import { useImages } from '@/composables/useImages'
 
 const dataStore = useDataStore()
 const { loadImage } = useImages()
+const router = useRouter()
 
 const currentIndex = ref(0)
 const imageLoaded = ref(false)
@@ -152,6 +154,12 @@ const handleWheel = (e: WheelEvent) => {
         })
     }
 }
+
+const navigateToPlace = () => {
+    if (currentPlace.value) {
+        router.push(`/place/${currentPlace.value.id}`)
+    }
+}
 </script>
 
 <template>
@@ -266,7 +274,8 @@ const handleWheel = (e: WheelEvent) => {
                                             :transition="{ duration: 0.6, delay: 0.4, type: 'spring', stiffness: 200 }"
                                             :whileHover="{ scale: 1.05 }" :whileTap="{ scale: 0.95 }">
                                             <button
-                                                class="bg-black hover:bg-white/70 hover:text-black text-white px-6 py-2 text-xs sm:text-xs rounded-full shadow-2xl transition-colors duration-150">
+                                                @click="navigateToPlace"
+                                                class="bg-black cursor-pointer hover:bg-white/70 hover:text-black text-white px-6 py-2 text-xs sm:text-xs rounded-full shadow-2xl transition-colors duration-150">
                                                 Let's Go
                                             </button>
                                         </Motion>

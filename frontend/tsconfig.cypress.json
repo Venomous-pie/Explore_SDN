@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "cypress/**/*.ts",
+    "cypress/**/*.tsx"
+  ],
+  "compilerOptions": {
+    "isolatedModules": false,
+    "types": ["cypress", "node"],
+    "lib": ["ES2015", "DOM"],
+    "target": "ES2015",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

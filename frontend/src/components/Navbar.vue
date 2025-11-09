@@ -50,19 +50,19 @@
                         <span>Destinations</span>
                     </router-link>
 
-                    <router-link to="/about" @click="closeMenu"
+                    <router-link to="/culture" @click="closeMenu"
                         class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
                         <div class="i-mdi-account-group text-purple-600 text-lg"></div>
                         <span>Culture</span>
                     </router-link>
 
-                    <router-link to="/faq" @click="closeMenu"
+                    <router-link to="/plan-trip" @click="closeMenu"
                         class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
                         <div class="i-mdi-map-marker-path text-green-600 text-lg"></div>
                         <span>Plan Trip</span>
                     </router-link>
 
-                    <router-link to="/about" @click="closeMenu"
+                    <router-link to="/blog" @click="closeMenu"
                         class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
                         <div class="i-mdi-post text-orange-600 text-lg"></div>
                         <span>Blog</span>

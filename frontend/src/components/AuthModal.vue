@@ -25,13 +25,27 @@
             </div>
 
             <!-- Tab Switcher -->
-            <div class="flex gap-2 mb-4 bg-gray-100 p-1 rounded-md">
-                <div @click="isSignUp = false" :class="['flex-1 py-1.5 px-3 rounded text-xs font-medium transition-all',
-                    !isSignUp ? 'bg-black text-white shadow-sm' : 'text-gray-600 hover:text-gray-900']">
+            <div class="flex gap-2 mb-4 bg-gray-100 p-1 rounded-lg relative">
+                <!-- Sliding background indicator -->
+                <div 
+                    class="absolute top-1 bottom-1 bg-black rounded-md shadow-sm transition-all duration-300 ease-in-out"
+                    :style="{ 
+                        left: isSignUp ? '50%' : '4px', 
+                        right: isSignUp ? '4px' : '50%' 
+                    }"
+                ></div>
+                
+                <!-- Tab buttons -->
+                <div 
+                    @click="isSignUp = false" 
+                    class="flex-1 py-1.5 px-3 rounded text-xs font-medium transition-all duration-300 ease-in-out cursor-pointer text-center relative z-10"
+                    :class="!isSignUp ? 'text-white' : 'text-gray-600 hover:text-gray-900'">
                     Log In
                 </div>
-                <div @click="isSignUp = true" :class="['flex-1 py-1.5 px-3 rounded text-xs font-medium transition-all',
-                    isSignUp ? 'bg-black text-white shadow-sm' : 'text-gray-600 hover:text-gray-900']">
+                <div 
+                    @click="isSignUp = true" 
+                    class="flex-1 py-1.5 px-3 rounded text-xs font-medium transition-all duration-300 ease-in-out cursor-pointer text-center relative z-10"
+                    :class="isSignUp ? 'text-white' : 'text-gray-600 hover:text-gray-900'">
                     Sign Up
                 </div>
             </div>

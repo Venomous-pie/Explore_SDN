@@ -14,7 +14,7 @@
         <section>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
           <p class="text-gray-700 leading-relaxed">
-            By accessing and using Surigao Escapes, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+            By accessing and using Explore SDN, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
           </p>
         </section>
 
@@ -40,7 +40,7 @@
         <section>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Intellectual Property</h2>
           <p class="text-gray-700 leading-relaxed">
-            All content on Surigao Escapes, including text, graphics, logos, images, and software, is the property of Surigao Escapes or its content suppliers and is protected by intellectual property laws.
+            All content on Explore SDN, including text, graphics, logos, images, and software, is the property of Explore SDN or its content suppliers and is protected by intellectual property laws.
           </p>
         </section>
 
@@ -54,7 +54,7 @@
         <section>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Limitation of Liability</h2>
           <p class="text-gray-700 leading-relaxed">
-            Surigao Escapes shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services or inability to use our services.
+            Explore SDN shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of our services or inability to use our services.
           </p>
         </section>
 
@@ -68,7 +68,7 @@
         <section>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Information</h2>
           <div class="bg-gray-50 rounded-xl p-6">
-            <p class="text-gray-700"><strong>Email:</strong> legal@surigaoescapes.com</p>
+            <p class="text-gray-700"><strong>Email:</strong> legal@exploresdn.com</p>
             <p class="text-gray-700"><strong>Phone:</strong> +63 912 345 6789</p>
           </div>
         </section>

@@ -153,7 +153,7 @@
       <!-- Bottom Bar with Copyright -->
       <div class="mt-4 pt-8 border-t border-gray-700 text-center">
         <p class="text-sm text-gray-400">
-          © {{ currentYear }} Surigao Escapes. All rights reserved. | Discover the beauty of Surigao del Norte
+          © {{ currentYear }} Explore SDN. All rights reserved. | Discover the beauty of Surigao del Norte
         </p>
         <p class="text-xs text-gray-500 mt-2">
           Made with ❤️ for travelers exploring the Philippines

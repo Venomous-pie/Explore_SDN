@@ -146,12 +146,14 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { useDataStore } from '@/stores/dataStore'
 import { useImages } from '@/composables/useImages'
 import type { Place } from '@/services/api'
 
 const dataStore = useDataStore()
 const { getImageSrc } = useImages()
+const router = useRouter()
 
 // State
 const currentPlaceIndex = ref(0)
@@ -238,15 +240,19 @@ const selectPlace = (index: number) => {
 
 // CTA Actions
 const handleBookNow = () => {
-  // Implement booking logic
-  console.log('Book Now clicked for:', currentPlace.value?.name)
-  alert(`Booking ${currentPlace.value?.name}`)
+  if (currentPlace.value) {
+    // Navigate to hotels page with query parameter for the place
+    router.push({
+      path: '/hotels',
+      query: { place: currentPlace.value.name, municipality: currentPlace.value.municipality }
+    })
+  }
 }
 
 const handleLearnMore = () => {
-  // Implement learn more logic
-  console.log('Learn More clicked for:', currentPlace.value?.name)
-  // Could navigate to detail page or open modal
+  if (currentPlace.value) {
+    router.push(`/place/${currentPlace.value.id}`)
+  }
 }
 
 onMounted(() => {

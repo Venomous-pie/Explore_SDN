@@ -14,7 +14,7 @@
         <section>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Introduction</h2>
           <p class="text-gray-700 leading-relaxed">
-            Surigao Escapes ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+            Explore SDN ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
           </p>
         </section>
 
@@ -74,7 +74,7 @@
             If you have questions about this Privacy Policy, please contact us:
           </p>
           <div class="bg-gray-50 rounded-xl p-6">
-            <p class="text-gray-700"><strong>Email:</strong> privacy@surigaoescapes.com</p>
+            <p class="text-gray-700"><strong>Email:</strong> privacy@exploresdn.com</p>
             <p class="text-gray-700"><strong>Phone:</strong> +63 912 345 6789</p>
           </div>
         </section>

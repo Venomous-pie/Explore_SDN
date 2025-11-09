@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { useDataStore } from '@/stores/dataStore'
 import { useImages } from '@/composables/useImages'
 
 const dataStore = useDataStore()
 const { getImageSrc } = useImages()
+const router = useRouter()
 
 // Get all images from places
 const allImages = computed(() => {
@@ -125,6 +127,10 @@ onUnmounted(() => {
   stopAutoScroll()
 })
 
+const navigateToPlace = (placeId: number) => {
+  router.push(`/place/${placeId}`)
+}
+
 </script>
 
 <template>
@@ -141,6 +147,7 @@ onUnmounted(() => {
         <div 
           v-for="image in column" 
           :key="image.id"
+          @click="navigateToPlace(image.placeId)"
           class="masonry-item rounded-lg overflow-hidden shadow-lg relative group cursor-pointer"
           :style="{ height: `${image.height}px`, width: '300px' }"
         >

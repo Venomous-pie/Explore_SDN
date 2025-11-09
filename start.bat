@@ -1,10 +1,10 @@
 @echo off
-REM Surigao Escapes - Start Script (Batch)
+REM Explore SDN - Start Script (Batch)
 REM Runs both backend and frontend servers concurrently
 
 echo.
 echo ========================================
-echo    Surigao Escapes - Starting Servers
+echo    Explore SDN - Starting Servers
 echo ========================================
 echo.
 
@@ -60,4 +60,4 @@ echo [SUCCESS] Both servers are running!
 echo.
 echo Close the server windows to stop them.
 echo.
-pause
+exit

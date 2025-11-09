@@ -1,7 +1,7 @@
 # Authentication System Guide
 
 ## Overview
-A modular, reusable authentication system with black and white theme for the Surigao Escapes application.
+A modular, reusable authentication system with black and white theme for the Explore SDN application.
 
 ## Architecture
 

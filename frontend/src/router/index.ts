@@ -54,13 +54,44 @@ const router = createRouter({
       name: 'Terms', 
       component: () => import('../views/TermsOfServiceView.vue') 
     },
+    { 
+      path: '/culture', 
+      name: 'Culture', 
+      component: () => import('../views/CultureView.vue') 
+    },
+    { 
+      path: '/blog', 
+      name: 'Blog', 
+      component: () => import('../views/BlogView.vue') 
+    },
+    {
+      path: '/blog/:id',
+      name: 'BlogPostDetail',
+      component: () => import('../views/BlogPostDetailView.vue')
+    },
+    { 
+      path: '/plan-trip', 
+      name: 'PlanTrip', 
+      component: () => import('../views/PlanTripView.vue') 
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
+    // If using browser back/forward buttons, restore previous scroll position
     if (savedPosition) {
       return savedPosition
-    } else {
-      return { top: 0, behavior: 'smooth' }
     }
+    
+    // If navigating to a hash anchor (e.g., #section)
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+        top: 80, // Offset for fixed navbar
+      }
+    }
+    
+    // Always scroll to top when navigating to a new page
+    return { top: 0, left: 0, behavior: 'instant' }
   }
 })
 

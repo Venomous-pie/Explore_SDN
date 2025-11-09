@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Surigao Escapes Backend API",
+  "description": "Explore SDN Backend API",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
