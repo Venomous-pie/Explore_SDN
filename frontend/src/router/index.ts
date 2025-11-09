@@ -74,6 +74,11 @@ const router = createRouter({
       name: 'PlanTrip', 
       component: () => import('../views/PlanTripView.vue') 
     },
+    { 
+      path: '/highlights', 
+      name: 'Highlights', 
+      component: () => import('../views/HighlightsView.vue') 
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     // If using browser back/forward buttons, restore previous scroll position

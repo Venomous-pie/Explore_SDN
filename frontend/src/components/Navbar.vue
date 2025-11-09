@@ -68,6 +68,12 @@
                         <span>Blog</span>
                     </router-link>
 
+                    <router-link to="/highlights" @click="closeMenu"
+                        class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
+                        <div class="i-mdi-image-multiple text-pink-600 text-lg"></div>
+                        <span>Highlights</span>
+                    </router-link>
+
                     <router-link to="/contact" @click="closeMenu"
                         class="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-xl transition-colors text-xs font-semibold text-gray-900 no-underline">
                         <div class="i-mdi-email text-red-600 text-lg"></div>
