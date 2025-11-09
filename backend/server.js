@@ -309,6 +309,16 @@ app.get('/api/hotels/categories', (req, res) => {
   res.json({ success: true, data: result });
 });
 
+// Health check endpoint for Docker
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    success: true, 
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`📊 Loaded ${places.length} places, ${dining.length} restaurants, ${hotels.length} hotels`);
