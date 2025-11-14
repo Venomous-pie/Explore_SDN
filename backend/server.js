@@ -6,10 +6,11 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || 'http://localhost:5173';
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite dev server
+  origin: CLIENT_ORIGIN, // Vite dev server
   credentials: true // Allow cookies
 }));
 app.use(express.json());
