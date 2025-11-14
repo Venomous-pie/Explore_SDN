@@ -7,20 +7,28 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import UnoCSS from 'unocss/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [
+export default defineConfig(({ command }) => {
+  const plugins = [
     vue(),
     vueJsx(),
-    vueDevTools(),
     UnoCSS(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+  ]
+
+  // Enable Vue DevTools only in development (when running `vite` dev server)
+  if (command === 'serve') {
+    plugins.push(vueDevTools())
+  }
+
+  return {
+    plugins,
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url))
+      },
     },
-  },
-  server: {
-    host: true,
-    port: 5173,
-  },
+    server: {
+      host: true,
+      port: 5173,
+    },
+  }
 })
